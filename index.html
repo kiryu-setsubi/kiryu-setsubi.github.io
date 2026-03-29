@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>希竜設備</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: #0b1220;
+  color: #fff;
+}
+
+/* ===== ヒーロー ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* 背景スライド */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideShow 18s infinite;
+}
+
+.hero-bg img:nth-child(1){ animation-delay: 0s; }
+.hero-bg img:nth-child(2){ animation-delay: 6s; }
+.hero-bg img:nth-child(3){ animation-delay: 12s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 暗めフィルター */
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.55);
+  z-index:1;
+}
+
+/* 中身 */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+/* ロゴ */
+.logo {
+  width: 140px;
+  margin: 0 auto 18px;
+  display: block;
+  border-radius: 24px;
+}
+
+/* ラベル */
+.eyebrow {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.4);
+  background: rgba(255,255,255,.08);
+  letter-spacing: .18em;
+  font-size: 11px;
+  margin-bottom: 14px;
+}
+
+/* タイトル */
+h1 {
+  margin: 0 0 12px;
+  font-size: 34px;
+  letter-spacing: .08em;
+}
+
+/* 説明 */
+.lead {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,.95);
+}
+
+/* ボタン */
+.btn {
+  display: block;
+  padding: 14px;
+  margin: 10px auto;
+  border-radius: 14px;
+  font-weight: bold;
+  max-width: 320px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #0b3f7d;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,.4);
+}
+
+/* 固定ボタン */
+.floating {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.floating a {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.phone { background:#1e3a8a; }
+.line { background:#22c55e; }
+
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <!-- 背景スライド -->
+  <div class="hero-bg">
+    <img src="images/kyusui.PNG">
+    <img src="images/2soushink.PNG">
+    <img src="images/junior toilet.PNG">
+  </div>
+
+  <div class="hero-inner">
+
+    <!-- ロゴ -->
+    <img src="images/logo.PNG" class="logo">
+
+    <div class="eyebrow">KIRYU SETSUBI</div>
+
+    <h1>希竜設備</h1>
+
+    <p class="lead">
+      水回り・配管・設備工事を、丁寧に美しく仕上げます。
+    </p>
+
+    <a href="tel:08038688596" class="btn btn-primary">電話する</a>
+    <a href="https://lin.ee/8Yj8HZK" class="btn btn-secondary">LINEで相談</a>
+
+  </div>
+
+</header>
+
+<!-- 固定ボタン -->
+<div class="floating">
+  <a href="tel:08038688596" class="phone">📞 電話</a>
+  <a href="https://lin.ee/8Yj8HZK" class="line">LINE</a>
+</div>
+
+</body>
+</html>
