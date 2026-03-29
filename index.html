@@ -10,15 +10,13 @@
   />
   <style>
     :root{
-      --bg:#07111d;
-      --bg2:#0e1a29;
-      --card:rgba(255,255,255,0.08);
-      --line:#18c74f;
-      --accent:#6ec1ff;
-      --gold:#d7c08a;
       --white:#ffffff;
-      --muted:rgba(255,255,255,0.78);
-      --shadow:0 20px 60px rgba(0,0,0,0.45);
+      --muted:rgba(255,255,255,0.82);
+      --soft:rgba(255,255,255,0.14);
+      --soft2:rgba(255,255,255,0.08);
+      --line:#18c74f;
+      --blue:#2f7ed8;
+      --shadow:0 20px 60px rgba(0,0,0,0.38);
       --max:1180px;
     }
 
@@ -27,14 +25,21 @@
 
     body{
       margin:0;
-      font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
-      background:radial-gradient(circle at top, #15314f 0%, #08111b 35%, #04080d 100%);
+      font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+      background:#0a1016;
       color:var(--white);
-      line-height:1.7;
+      line-height:1.75;
     }
 
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
 
     .container{
       width:min(calc(100% - 32px), var(--max));
@@ -47,15 +52,16 @@
       left:0;
       width:100%;
       z-index:50;
-      background:rgba(3,10,18,0.48);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      background:linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0.18));
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,0.18);
     }
 
     .header-inner{
       width:min(calc(100% - 28px), var(--max));
       margin:0 auto;
-      height:74px;
+      height:72px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -66,67 +72,51 @@
       display:flex;
       align-items:center;
       gap:12px;
-      min-width:0;
     }
 
     .brand img{
-      width:48px;
-      height:48px;
+      width:42px;
+      height:42px;
       object-fit:contain;
-      border-radius:14px;
-      background:rgba(255,255,255,0.09);
-      padding:6px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.3);
+      border-radius:12px;
+      background:rgba(255,255,255,0.6);
+      padding:5px;
     }
 
-    .brand-text strong{
-      display:block;
+    .brand strong{
       font-size:17px;
+      color:#fff;
       letter-spacing:0.08em;
     }
 
-    .brand-text span{
-      display:block;
-      font-size:11px;
-      color:rgba(255,255,255,0.72);
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-    }
-
-    .header-cta{
+    .header-nav{
       display:flex;
       gap:10px;
       align-items:center;
     }
 
     .mini-btn{
-      padding:10px 16px;
+      padding:10px 15px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,0.18);
       font-size:13px;
-      background:rgba(255,255,255,0.06);
-      transition:0.25s ease;
-      white-space:nowrap;
-    }
-
-    .mini-btn:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.16);
+      border:1px solid rgba(255,255,255,0.2);
+      color:#fff;
     }
 
     .mini-btn.line{
-      background:rgba(24,199,79,0.16);
-      border-color:rgba(24,199,79,0.5);
+      background:rgba(24,199,79,0.18);
+      border-color:rgba(24,199,79,0.3);
     }
 
+    /* hero */
     .hero{
       position:relative;
       min-height:100svh;
       overflow:hidden;
-      padding-top:74px;
     }
 
-    .hero-bg{
+    .hero-slides{
       position:absolute;
       inset:0;
       z-index:0;
@@ -138,9 +128,9 @@
       background-size:cover;
       background-position:center;
       opacity:0;
-      transform:scale(1.08);
+      transform:scale(1.05);
       animation:heroFade 30s infinite;
-      filter:brightness(0.72) saturate(1.05);
+      filter:brightness(0.72);
     }
 
     .hero-slide:nth-child(1){ background-image:url("images/2ren senmendai.PNG"); animation-delay:0s; }
@@ -150,11 +140,11 @@
     .hero-slide:nth-child(5){ background-image:url("images/junior toilet.PNG"); animation-delay:24s; }
 
     @keyframes heroFade{
-      0%{opacity:0; transform:scale(1.08);}
-      8%{opacity:1;}
-      22%{opacity:1; transform:scale(1.03);}
-      30%{opacity:0;}
-      100%{opacity:0;}
+      0%{ opacity:0; transform:scale(1.05); }
+      8%{ opacity:1; }
+      22%{ opacity:1; transform:scale(1.01); }
+      30%{ opacity:0; }
+      100%{ opacity:0; }
     }
 
     .hero-overlay{
@@ -162,279 +152,156 @@
       inset:0;
       z-index:1;
       background:
-        linear-gradient(to bottom, rgba(2,8,14,0.48), rgba(2,8,14,0.72)),
-        linear-gradient(to top, rgba(2,8,14,0.95) 0%, rgba(2,8,14,0.15) 40%, rgba(2,8,14,0.55) 100%);
+        linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, rgba(10,16,22,0.16) 14%, rgba(10,16,22,0.46) 45%, rgba(10,16,22,0.84) 100%);
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
-      width:min(calc(100% - 32px), var(--max));
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:110px 20px 120px;
+    }
+
+    .hero-box{
+      width:min(100%, 820px);
       margin:0 auto;
-      min-height:calc(100svh - 74px);
-      display:grid;
-      grid-template-columns:1.15fr 0.85fr;
-      gap:36px;
-      align-items:center;
-      padding:42px 0 72px;
     }
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.12);
-      font-size:12px;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      color:#d6e8ff;
-      margin-bottom:18px;
-    }
-
-    .eyebrow::before{
-      content:"";
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 16px rgba(110,193,255,0.85);
-    }
-
-    .hero-copy h1{
-      margin:0;
-      font-size:clamp(34px, 6vw, 66px);
-      line-height:1.15;
-      letter-spacing:0.05em;
-      text-shadow:0 6px 30px rgba(0,0,0,0.35);
-    }
-
-    .hero-copy .lead{
-      margin:18px 0 0;
-      color:var(--muted);
-      font-size:clamp(15px, 2.2vw, 19px);
-      max-width:680px;
-    }
-
-    .hero-points{
+    .hero-logo-wrap{
+      width:190px;
+      height:190px;
+      margin:0 auto 26px;
+      border-radius:34px;
       display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin:26px 0 0;
-    }
-
-    .hero-points span{
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.12);
-      font-size:13px;
-      color:#eef7ff;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin:30px 0 0;
-    }
-
-    .btn{
-      display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      min-height:54px;
-      padding:0 22px;
-      border-radius:999px;
-      font-size:15px;
-      font-weight:700;
-      letter-spacing:0.04em;
-      transition:0.25s ease;
-      box-shadow:var(--shadow);
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg, #77cbff 0%, #3f91da 100%);
-      color:#05111c;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-3px);
-      box-shadow:0 16px 42px rgba(64,148,220,0.38);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,0.08);
-      color:#fff;
-      border:1px solid rgba(255,255,255,0.16);
-    }
-
-    .btn-secondary:hover{
-      transform:translateY(-3px);
       background:rgba(255,255,255,0.14);
-    }
-
-    .hero-trust{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-      margin-top:28px;
-      max-width:720px;
-    }
-
-    .trust-card{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:20px;
-      padding:16px;
-      backdrop-filter:blur(8px);
-    }
-
-    .trust-card strong{
-      display:block;
-      font-size:20px;
-      color:#fff;
-      margin-bottom:4px;
-    }
-
-    .trust-card span{
-      display:block;
-      color:rgba(255,255,255,0.74);
-      font-size:13px;
-    }
-
-    .hero-side{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .logo-float{
-      position:relative;
-      width:min(100%, 420px);
-      aspect-ratio:1 / 1;
-      display:grid;
-      place-items:center;
-    }
-
-    .logo-float::before,
-    .logo-float::after{
-      content:"";
-      position:absolute;
-      inset:8%;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(110,193,255,0.2) 0%, rgba(110,193,255,0.05) 38%, rgba(110,193,255,0) 70%);
-      animation:pulseGlow 4s ease-in-out infinite;
-      filter:blur(6px);
-    }
-
-    .logo-float::after{
-      inset:0;
-      animation-delay:1.5s;
-      opacity:0.65;
-    }
-
-    @keyframes pulseGlow{
-      0%,100%{transform:scale(0.96); opacity:0.55;}
-      50%{transform:scale(1.04); opacity:1;}
-    }
-
-    .logo-shell{
-      position:relative;
-      width:74%;
-      aspect-ratio:1 / 1;
-      border-radius:32px;
-      background:linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-      border:1px solid rgba(255,255,255,0.18);
-      box-shadow:0 0 0 1px rgba(255,255,255,0.06) inset, 0 30px 80px rgba(0,0,0,0.42);
-      backdrop-filter:blur(16px);
-      display:grid;
-      place-items:center;
-      animation:floatLogo 4.8s ease-in-out infinite;
+      border:1px solid rgba(255,255,255,0.22);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:
+        0 20px 45px rgba(0,0,0,0.18),
+        inset 0 0 0 1px rgba(255,255,255,0.16);
+      animation:floatLogo 5s ease-in-out infinite;
     }
 
     @keyframes floatLogo{
-      0%,100%{transform:translateY(0px);}
-      50%{transform:translateY(-12px);}
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-8px); }
     }
 
-    .logo-shell img{
-      width:66%;
+    .hero-logo{
+      width:140px;
+      height:140px;
       object-fit:contain;
-      filter:drop-shadow(0 10px 26px rgba(0,0,0,0.32));
+      background:#fff;
+      border-radius:28px;
+      padding:14px;
+      box-shadow:0 14px 30px rgba(0,0,0,0.12);
+    }
+
+    .hero-tag{
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.28);
+      background:rgba(255,255,255,0.08);
+      font-size:13px;
+      letter-spacing:0.24em;
+      color:#fff;
+      margin-bottom:20px;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:clamp(42px, 8vw, 74px);
+      font-weight:800;
+      letter-spacing:0.08em;
+      line-height:1.08;
+      text-shadow:0 10px 30px rgba(0,0,0,0.28);
+    }
+
+    .hero-lead{
+      margin:18px auto 0;
+      max-width:760px;
+      font-size:clamp(18px, 3vw, 23px);
+      color:rgba(255,255,255,0.92);
+      line-height:1.8;
+      text-shadow:0 6px 20px rgba(0,0,0,0.28);
+    }
+
+    .hero-actions{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      width:min(100%, 760px);
+      margin:34px auto 0;
+    }
+
+    .hero-btn{
+      min-height:74px;
+      border-radius:26px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:0.08em;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-btn.tel{
+      background:#fff;
+      color:#1d4d91;
+    }
+
+    .hero-btn.line{
+      background:rgba(11,16,22,0.58);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.14);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .scroll-note{
+      margin-top:18px;
+      font-size:12px;
+      letter-spacing:0.22em;
+      color:rgba(255,255,255,0.68);
     }
 
     section{
-      position:relative;
-      padding:96px 0;
+      padding:88px 0;
     }
 
     .section-head{
       text-align:center;
-      margin-bottom:42px;
+      margin-bottom:40px;
     }
 
-    .section-head .subhead{
-      color:var(--gold);
-      letter-spacing:0.16em;
+    .section-head .sub{
       font-size:12px;
+      letter-spacing:0.22em;
+      color:rgba(255,255,255,0.58);
+      margin-bottom:12px;
       text-transform:uppercase;
-      margin-bottom:10px;
     }
 
     .section-head h2{
       margin:0;
-      font-size:clamp(28px, 4vw, 42px);
-      line-height:1.25;
-      letter-spacing:0.06em;
+      font-size:clamp(28px, 5vw, 42px);
+      letter-spacing:0.08em;
     }
 
     .section-head p{
-      width:min(100%, 760px);
       margin:14px auto 0;
+      width:min(100%, 760px);
       color:rgba(255,255,255,0.72);
       font-size:15px;
-    }
-
-    .appeal-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:18px;
-    }
-
-    .appeal-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:24px;
-      padding:26px 22px;
-      box-shadow:var(--shadow);
-    }
-
-    .appeal-card .icon{
-      width:56px;
-      height:56px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      margin-bottom:18px;
-      font-size:24px;
-      background:rgba(110,193,255,0.12);
-      border:1px solid rgba(110,193,255,0.24);
-    }
-
-    .appeal-card h3{
-      margin:0 0 10px;
-      font-size:20px;
-      letter-spacing:0.04em;
-    }
-
-    .appeal-card p{
-      margin:0;
-      color:rgba(255,255,255,0.74);
-      font-size:14px;
     }
 
     .service-grid{
@@ -444,36 +311,23 @@
     }
 
     .service-card{
-      background:var(--card);
+      background:rgba(255,255,255,0.06);
       border:1px solid rgba(255,255,255,0.1);
       border-radius:24px;
       padding:24px 20px;
-      backdrop-filter:blur(8px);
       box-shadow:var(--shadow);
-      transition:0.25s ease;
-    }
-
-    .service-card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(110,193,255,0.35);
-    }
-
-    .service-card .num{
-      font-size:12px;
-      letter-spacing:0.18em;
-      color:var(--gold);
-      margin-bottom:10px;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
     .service-card h3{
       margin:0 0 10px;
-      font-size:20px;
-      letter-spacing:0.04em;
+      font-size:21px;
     }
 
     .service-card p{
       margin:0;
-      color:rgba(255,255,255,0.74);
+      color:rgba(255,255,255,0.72);
       font-size:14px;
     }
 
@@ -483,8 +337,8 @@
       border-radius:28px;
       border:1px solid rgba(255,255,255,0.12);
       background:rgba(255,255,255,0.04);
-      box-shadow:var(--shadow);
       padding:18px;
+      box-shadow:var(--shadow);
     }
 
     .works-track{
@@ -499,8 +353,8 @@
     }
 
     @keyframes worksMarquee{
-      0%{transform:translateX(0);}
-      100%{transform:translateX(calc(-50% - 9px));}
+      0%{ transform:translateX(0); }
+      100%{ transform:translateX(calc(-50% - 9px)); }
     }
 
     .work-card{
@@ -508,7 +362,7 @@
       flex:0 0 auto;
       border-radius:22px;
       overflow:hidden;
-      background:#0d1824;
+      background:#101821;
       border:1px solid rgba(255,255,255,0.1);
     }
 
@@ -516,7 +370,6 @@
       width:100%;
       height:240px;
       object-fit:cover;
-      background:#08111b;
     }
 
     .work-body{
@@ -527,32 +380,30 @@
       display:block;
       font-size:18px;
       margin-bottom:8px;
-      letter-spacing:0.04em;
     }
 
     .work-body p{
       margin:0;
-      font-size:14px;
       color:rgba(255,255,255,0.72);
+      font-size:14px;
     }
 
     .cta-banner{
-      border-radius:32px;
-      background:linear-gradient(135deg, rgba(112,177,255,0.16), rgba(255,255,255,0.05)), rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.12);
-      padding:34px 28px;
-      box-shadow:var(--shadow);
+      border-radius:30px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:32px 26px;
       display:grid;
       grid-template-columns:1.1fr 0.9fr;
       gap:24px;
       align-items:center;
+      box-shadow:var(--shadow);
     }
 
     .cta-banner h3{
       margin:0 0 12px;
       font-size:30px;
-      line-height:1.3;
-      letter-spacing:0.05em;
+      line-height:1.45;
     }
 
     .cta-banner p{
@@ -562,9 +413,29 @@
 
     .cta-buttons{
       display:flex;
+      gap:14px;
       flex-wrap:wrap;
       justify-content:flex-end;
-      gap:14px;
+    }
+
+    .btn{
+      min-height:54px;
+      padding:0 22px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+    }
+
+    .btn.line{
+      background:#21c95b;
+      color:#07110a;
+    }
+
+    .btn.tel{
+      background:#fff;
+      color:#1d4d91;
     }
 
     .info-grid{
@@ -574,7 +445,7 @@
     }
 
     .info-card{
-      background:rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.06);
       border:1px solid rgba(255,255,255,0.1);
       border-radius:28px;
       padding:26px 24px;
@@ -605,14 +476,14 @@
     }
 
     .info-row dt{
-      color:var(--gold);
+      color:rgba(255,255,255,0.56);
       font-size:13px;
       letter-spacing:0.08em;
     }
 
     .info-row dd{
       margin:0;
-      color:rgba(255,255,255,0.82);
+      color:rgba(255,255,255,0.9);
       font-size:14px;
     }
 
@@ -621,7 +492,7 @@
       gap:18px;
       align-items:center;
       background:rgba(24,199,79,0.08);
-      border:1px solid rgba(24,199,79,0.22);
+      border:1px solid rgba(24,199,79,0.18);
       padding:16px;
       border-radius:22px;
       margin-top:18px;
@@ -629,29 +500,28 @@
 
     .line-box img{
       width:100px;
-      border-radius:14px;
       background:#fff;
+      border-radius:14px;
       padding:8px;
       flex:0 0 auto;
-    }
-
-    .line-box p{
-      margin:0;
-      font-size:14px;
-      color:rgba(255,255,255,0.8);
     }
 
     .line-box strong{
       display:block;
       margin-bottom:6px;
       font-size:17px;
-      color:#fff;
+    }
+
+    .line-box p{
+      margin:0;
+      font-size:14px;
+      color:rgba(255,255,255,0.78);
     }
 
     footer{
       padding:42px 0 110px;
       text-align:center;
-      color:rgba(255,255,255,0.55);
+      color:rgba(255,255,255,0.52);
       font-size:13px;
     }
 
@@ -662,12 +532,13 @@
       bottom:0;
       z-index:60;
       padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-      background:linear-gradient(to top, rgba(4,8,13,0.92), rgba(4,8,13,0.42));
+      background:linear-gradient(to top, rgba(8,12,18,0.95), rgba(8,12,18,0.38));
       backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
     .fixed-inner{
-      width:min(calc(100% - 8px), 720px);
+      width:min(calc(100% - 8px), 760px);
       margin:0 auto;
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -675,77 +546,99 @@
     }
 
     .fixed-link{
-      min-height:56px;
+      min-height:58px;
       border-radius:18px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-weight:700;
-      letter-spacing:0.04em;
+      font-weight:800;
+      letter-spacing:0.06em;
       box-shadow:var(--shadow);
     }
 
     .fixed-link.tel{
-      background:linear-gradient(135deg, #4da8ff, #2b78c7);
-      color:#06111b;
+      background:#fff;
+      color:#1d4d91;
     }
 
     .fixed-link.line{
-      background:linear-gradient(135deg, #29d95c, #13b948);
-      color:#08170d;
+      background:#21c95b;
+      color:#07110a;
     }
 
-    .reveal{
-      opacity:0;
-      transform:translateY(28px);
-      transition:0.8s ease;
+    @media (max-width:980px){
+      .service-grid,
+      .info-grid,
+      .cta-banner{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .cta-banner{
+        grid-template-columns:1fr;
+      }
+
+      .cta-buttons{
+        justify-content:flex-start;
+      }
     }
 
-    .reveal.show{
-      opacity:1;
-      transform:translateY(0);
-    }
+    @media (max-width:640px){
+      .header-inner{
+        height:68px;
+      }
 
-    @media (max-width: 980px){
-      .hero-inner,
-      .cta-banner,
+      .header-nav .mini-btn:first-child{
+        display:none;
+      }
+
+      .hero-inner{
+        padding:100px 20px 120px;
+      }
+
+      .hero-logo-wrap{
+        width:150px;
+        height:150px;
+        border-radius:28px;
+        margin-bottom:22px;
+      }
+
+      .hero-logo{
+        width:112px;
+        height:112px;
+        border-radius:22px;
+      }
+
+      .hero-tag{
+        font-size:12px;
+        padding:9px 18px;
+        letter-spacing:0.18em;
+      }
+
+      .hero h1{
+        font-size:54px;
+      }
+
+      .hero-lead{
+        font-size:16px;
+      }
+
+      .hero-btn{
+        min-height:68px;
+        font-size:19px;
+      }
+
+      .service-grid,
       .info-grid{
         grid-template-columns:1fr;
       }
 
-      .hero-inner{
-        gap:22px;
-        padding:24px 0 54px;
+      .work-card{
+        width:min(86vw, 300px);
       }
 
-      .hero-side{ order:-1; }
-      .logo-float{ width:min(100%, 290px); }
-
-      .hero-trust,
-      .appeal-grid,
-      .service-grid{
-        grid-template-columns:1fr 1fr;
+      .work-card img{
+        height:210px;
       }
-
-      .cta-buttons{ justify-content:flex-start; }
-    }
-
-    @media (max-width: 640px){
-      .header-inner{ height:68px; }
-      .header-cta .mini-btn:first-child{ display:none; }
-      .hero{ padding-top:68px; }
-      .hero-inner{ min-height:calc(100svh - 68px); }
-
-      section{ padding:76px 0; }
-
-      .hero-trust,
-      .appeal-grid,
-      .service-grid{
-        grid-template-columns:1fr;
-      }
-
-      .work-card{ width:min(86vw, 300px); }
-      .work-card img{ height:210px; }
 
       .info-row{
         grid-template-columns:1fr;
@@ -756,8 +649,6 @@
         flex-direction:column;
         align-items:flex-start;
       }
-
-      .line-box img{ width:120px; }
     }
   </style>
 </head>
@@ -767,13 +658,10 @@
     <div class="header-inner">
       <a href="#" class="brand">
         <img src="images/logo.PNG" alt="希竜設備ロゴ">
-        <div class="brand-text">
-          <strong>希竜設備</strong>
-          <span>KIRYU SETSUBI</span>
-        </div>
+        <strong>希竜設備</strong>
       </a>
 
-      <div class="header-cta">
+      <div class="header-nav">
         <a class="mini-btn" href="#works">施工事例</a>
         <a class="mini-btn line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINE相談</a>
       </div>
@@ -782,7 +670,7 @@
 
   <main>
     <section class="hero">
-      <div class="hero-bg">
+      <div class="hero-slides">
         <div class="hero-slide"></div>
         <div class="hero-slide"></div>
         <div class="hero-slide"></div>
@@ -792,108 +680,53 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-inner">
-        <div class="hero-copy reveal">
-          <div class="eyebrow">大阪エリア対応 / 水回りトラブル迅速対応</div>
-          <h1>水漏れ・詰まり・設備交換まで、<br>すぐ頼れる水道設備のプロ。</h1>
-          <p class="lead">
-            漏水修理、排水詰まり、給水・排水工事、住設機器交換、リフォームまで対応。
-            まずは写真を送るだけでもOK。状況確認からご相談いただけます。
+        <div class="hero-box">
+          <div class="hero-logo-wrap">
+            <img src="images/logo.PNG" alt="希竜設備ロゴ" class="hero-logo">
+          </div>
+
+          <div class="hero-tag">KIRYU SETSUBI</div>
+
+          <h1>希竜設備</h1>
+
+          <p class="hero-lead">
+            施工写真をそのまま見せる、信頼感のあるホームページに。<br>
+            水回り・配管・設備工事を、丁寧に美しく仕上げます。
           </p>
 
-          <div class="hero-points">
-            <span>漏水修理</span>
-            <span>排水詰まり</span>
-            <span>給排水工事</span>
-            <span>住設機器取替</span>
-            <span>施工相談歓迎</span>
-          </div>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">無料で相談する</a>
-            <a class="btn btn-secondary" href="#works">施工事例を見る</a>
+            <a class="hero-btn tel" href="tel:08038688596">電話する</a>
+            <a class="hero-btn line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINEで相談</a>
           </div>
 
-          <div class="hero-trust">
-            <div class="trust-card">
-              <strong>写真相談OK</strong>
-              <span>LINEで状況確認しやすい</span>
-            </div>
-            <div class="trust-card">
-              <strong>幅広く対応</strong>
-              <span>修理から交換・工事まで</span>
-            </div>
-            <div class="trust-card">
-              <strong>地域密着</strong>
-              <span>身近で頼りやすい設備店</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-side reveal">
-          <div class="logo-float">
-            <div class="logo-shell">
-              <img src="images/logo.PNG" alt="希竜設備ロゴ">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="subhead">Reason</div>
-          <h2>選ばれる理由</h2>
-          <p>相談しやすさ・見やすい施工例・頼みやすい導線まで整えて、お問い合わせにつながりやすい構成にしています。</p>
-        </div>
-
-        <div class="appeal-grid">
-          <div class="appeal-card reveal">
-            <div class="icon">01</div>
-            <h3>相談しやすい</h3>
-            <p>電話だけでなく、LINEから写真を送って相談できるので初回の問い合わせハードルを下げられます。</p>
-          </div>
-          <div class="appeal-card reveal">
-            <div class="icon">02</div>
-            <h3>施工例で安心</h3>
-            <p>実際の施工写真を多く見せることで、対応内容や仕上がりのイメージが伝わりやすくなります。</p>
-          </div>
-          <div class="appeal-card reveal">
-            <div class="icon">03</div>
-            <h3>幅広い対応力</h3>
-            <p>水漏れ修理、詰まり、給排水工事、設備交換、リフォームまで一貫して案内できます。</p>
-          </div>
+          <div class="scroll-note">SCROLL</div>
         </div>
       </div>
     </section>
 
     <section id="service">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="subhead">Service</div>
+        <div class="section-head">
+          <div class="sub">Service</div>
           <h2>サービス内容</h2>
-          <p>集客用にわかりやすく、依頼につながりやすい内容をカード化しています。</p>
+          <p>漏水修理から設備交換まで、水回りのお困りごとに幅広く対応しています。</p>
         </div>
 
         <div class="service-grid">
-          <article class="service-card reveal">
-            <div class="num">01</div>
+          <article class="service-card">
             <h3>漏水修理</h3>
             <p>蛇口・配管・継手まわりなど、水漏れトラブルの確認と修理に対応します。</p>
           </article>
-          <article class="service-card reveal">
-            <div class="num">02</div>
+          <article class="service-card">
             <h3>排水詰まり</h3>
             <p>キッチン、洗面、トイレなど、排水不良や詰まりの改善を行います。</p>
           </article>
-          <article class="service-card reveal">
-            <div class="num">03</div>
+          <article class="service-card">
             <h3>給排水工事</h3>
             <p>新設・改修にともなう給水・排水配管工事のご相談も可能です。</p>
           </article>
-          <article class="service-card reveal">
-            <div class="num">04</div>
-            <h3>住設機器交換</h3>
+          <article class="service-card">
+            <h3>住設機器取替</h3>
             <p>トイレ、洗面台、水栓などの設備交換・取替にも対応します。</p>
           </article>
         </div>
@@ -902,13 +735,13 @@
 
     <section id="works">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="subhead">Works</div>
+        <div class="section-head">
+          <div class="sub">Works</div>
           <h2>施工事例</h2>
-          <p>施工写真を増やして自動スライド化しています。写真が増えたら同じ形で追加できます。</p>
+          <p>施工写真を自動スライド表示にしています。写真が増えたら同じ形で追加できます。</p>
         </div>
 
-        <div class="works-wrap reveal">
+        <div class="works-wrap">
           <div class="works-track">
             <article class="work-card">
               <img src="images/2ren senmendai.PNG" alt="二連洗面台施工">
@@ -917,6 +750,7 @@
                 <p>設備まわりの納まりや仕上がりが伝わる施工例です。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/2soushink.PNG" alt="設備施工">
               <div class="work-body">
@@ -924,6 +758,7 @@
                 <p>給排水設備の施工状況がわかりやすい写真を掲載。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/gesui.PNG" alt="下水工事">
               <div class="work-body">
@@ -931,6 +766,7 @@
                 <p>外部配管や排水関係の工事例として活用できます。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/junior hand.PNG" alt="手洗い設備">
               <div class="work-body">
@@ -938,6 +774,7 @@
                 <p>住設機器まわりの施工・交換実績として掲載できます。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/junior toilet.PNG" alt="トイレ施工">
               <div class="work-body">
@@ -945,6 +782,7 @@
                 <p>トイレ交換や設備更新のイメージ作りに向いています。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/kyusui.PNG" alt="給水工事">
               <div class="work-body">
@@ -960,6 +798,7 @@
                 <p>設備まわりの納まりや仕上がりが伝わる施工例です。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/2soushink.PNG" alt="設備施工">
               <div class="work-body">
@@ -967,6 +806,7 @@
                 <p>給排水設備の施工状況がわかりやすい写真を掲載。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/gesui.PNG" alt="下水工事">
               <div class="work-body">
@@ -974,6 +814,7 @@
                 <p>外部配管や排水関係の工事例として活用できます。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/junior hand.PNG" alt="手洗い設備">
               <div class="work-body">
@@ -981,6 +822,7 @@
                 <p>住設機器まわりの施工・交換実績として掲載できます。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/junior toilet.PNG" alt="トイレ施工">
               <div class="work-body">
@@ -988,6 +830,7 @@
                 <p>トイレ交換や設備更新のイメージ作りに向いています。</p>
               </div>
             </article>
+
             <article class="work-card">
               <img src="images/kyusui.PNG" alt="給水工事">
               <div class="work-body">
@@ -1002,14 +845,15 @@
 
     <section>
       <div class="container">
-        <div class="cta-banner reveal">
+        <div class="cta-banner">
           <div>
             <h3>水回りのことで困ったら、<br>まずは気軽にご相談ください。</h3>
-            <p>「これ頼める？」「交換と修理どっちがいい？」みたいな相談でも大丈夫です。LINEなら写真を送って相談しやすいのでおすすめです。</p>
+            <p>LINEなら写真を送って相談しやすいのでおすすめです。修理・交換・工事のご相談まで幅広く対応します。</p>
           </div>
+
           <div class="cta-buttons">
-            <a class="btn btn-primary" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
-            <a class="btn btn-secondary" href="tel:08038688596">電話で相談する</a>
+            <a class="btn line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+            <a class="btn tel" href="tel:08038688596">電話で相談する</a>
           </div>
         </div>
       </div>
@@ -1017,14 +861,14 @@
 
     <section id="contact">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="subhead">Contact</div>
+        <div class="section-head">
+          <div class="sub">Contact</div>
           <h2>会社情報・お問い合わせ</h2>
-          <p>ここはあとで住所や営業時間を入れればさらに信頼感が上がる。</p>
+          <p>住所、営業時間、LINE相談先を掲載して、安心して問い合わせしやすい形にしています。</p>
         </div>
 
         <div class="info-grid">
-          <div class="info-card reveal">
+          <div class="info-card">
             <h3>会社情報</h3>
             <dl class="info-list">
               <div class="info-row">
@@ -1032,28 +876,38 @@
                 <dd>希竜設備</dd>
               </div>
               <div class="info-row">
-                <dt>対応内容</dt>
-                <dd>漏水修理 / 排水詰まり / 給排水工事 / 住設機器取替 / リフォーム</dd>
+                <dt>住所</dt>
+                <dd>
+                  〒596-0072<br>
+                  大阪府岸和田市堺町7-9-303
+                </dd>
               </div>
               <div class="info-row">
-                <dt>対応エリア</dt>
-                <dd>大阪エリア</dd>
+                <dt>営業時間</dt>
+                <dd>8:00〜18:00</dd>
+              </div>
+              <div class="info-row">
+                <dt>定休日</dt>
+                <dd>日曜日</dd>
               </div>
               <div class="info-row">
                 <dt>電話番号</dt>
                 <dd><a href="tel:08038688596">080-3868-8596</a></dd>
               </div>
+              <div class="info-row">
+                <dt>対応内容</dt>
+                <dd>漏水修理 / 排水詰まり / 給排水工事 / 住設機器取替 / リフォーム</dd>
+              </div>
             </dl>
           </div>
 
-          <div class="info-card reveal">
+          <div class="info-card">
             <h3>LINEでのお問い合わせ</h3>
             <p style="margin-top:0; color:rgba(255,255,255,0.78);">
-              写真を送って相談したい方はLINEが便利です。
-              ボタンから直接開けるようにして、QRも一緒に載せています。
+              写真を送って相談したい方はLINEが便利です。ボタンから直接開けて、QRからも追加できます。
             </p>
 
-            <a class="btn btn-primary" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer" style="margin-top:10px;">
+            <a class="btn line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer" style="margin-top:10px;">
               LINEを開く
             </a>
 
@@ -1061,7 +915,7 @@
               <img src="line-qr.PNG" alt="LINE QRコード">
               <div>
                 <strong>QRから追加したい方はこちら</strong>
-                <p><b>line-qr.PNG</b> という名前で、index.html と同じ場所に置いてください。</p>
+                <p><b>line-qr.PNG</b> を index.html と同じ場所に置いてください。</p>
               </div>
             </div>
           </div>
@@ -1076,21 +930,9 @@
 
   <div class="fixed-bar">
     <div class="fixed-inner">
-      <a class="fixed-link tel" href="tel:08038688596">電話で相談</a>
+      <a class="fixed-link tel" href="tel:08038688596">電話する</a>
       <a class="fixed-link line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINEで相談</a>
     </div>
   </div>
-
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach((el) => observer.observe(el));
-  </script>
 </body>
 </html>
