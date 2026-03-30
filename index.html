@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>岸和田市で水道でお困りなら希竜設備｜水漏れ修理・排水詰まり・配管工事</title>
   <meta name="description" content="岸和田市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・水道設備工事に対応。岸和田市、和泉市、泉大津市、貝塚市、泉佐野市、泉南市、その他泉州エリア一帯対応。" />
   <meta name="keywords" content="水漏れ修理,排水詰まり,配管工事,水道業者,岸和田市,和泉市,泉大津市,貝塚市,泉佐野市,泉南市,泉州" />
@@ -21,11 +21,8 @@
     html { scroll-behavior: smooth; }
     :root{
       --navy:#0d1c31;
-      --navy-deep:#08111d;
       --blue:#123e73;
-      --blue-soft:#1e5ea8;
       --gold:#c7a96b;
-      --white:#ffffff;
       --text:#172334;
       --muted:#617189;
       --line:rgba(21,43,76,.08);
@@ -46,6 +43,7 @@
     .hero {
       position: relative;
       min-height: 100svh;
+      height: 100svh;
       overflow: hidden;
       color: #fff;
       background: #09111c;
@@ -59,22 +57,22 @@
       opacity: 0;
       transform: scale(1.08);
       animation: heroFade 40s infinite ease-in-out;
-      filter: saturate(1.03) contrast(1.04) brightness(.9);
+      filter: saturate(1.03) contrast(1.04) brightness(.88);
     }
     .hero::before {
       content:"";
       position:absolute;
       inset:0;
       background:
-        linear-gradient(180deg, rgba(8,17,29,.20) 0%, rgba(8,17,29,.10) 20%, rgba(8,17,29,.62) 72%, rgba(8,17,29,.82) 100%),
-        radial-gradient(circle at top, rgba(255,255,255,.08), transparent 30%);
+        linear-gradient(180deg, rgba(8,17,29,.12) 0%, rgba(8,17,29,.08) 16%, rgba(8,17,29,.50) 72%, rgba(8,17,29,.76) 100%),
+        radial-gradient(circle at top, rgba(255,255,255,.06), transparent 28%);
       z-index:1;
     }
     .hero::after {
       content:"";
       position:absolute;
       inset:0;
-      background: linear-gradient(180deg, transparent 52%, rgba(8,17,29,.22) 70%, rgba(8,17,29,.48) 100%);
+      background: linear-gradient(180deg, transparent 46%, rgba(8,17,29,.18) 68%, rgba(8,17,29,.44) 100%);
       z-index:1;
     }
     @keyframes heroFade {
@@ -88,10 +86,12 @@
     .hero-inner {
       position: relative;
       z-index: 2;
+      width: 100%;
       max-width: 1180px;
-      min-height: 100svh;
+      min-height: 100%;
+      height: 100%;
       margin: 0 auto;
-      padding: 26px 16px 120px;
+      padding: max(22px, env(safe-area-inset-top)) 18px calc(120px + env(safe-area-inset-bottom));
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -102,15 +102,16 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      padding-top: 18px;
       pointer-events: none;
     }
 
     .logo-float {
-      width: 170px;
-      padding: 16px;
+      width: 168px;
+      padding: 12px;
       border-radius: 34px;
-      background: linear-gradient(180deg, rgba(255,255,255,.26), rgba(255,255,255,.10));
-      border: 1px solid rgba(255,255,255,.24);
+      background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.08));
+      border: 1px solid rgba(255,255,255,.20);
       backdrop-filter: blur(16px) saturate(1.08);
       -webkit-backdrop-filter: blur(16px) saturate(1.08);
       box-shadow:
@@ -127,7 +128,7 @@
       position:absolute;
       inset: 1px;
       border-radius: 33px;
-      background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0));
+      background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0));
       pointer-events:none;
     }
     .logo-float::after {
@@ -136,30 +137,34 @@
       top: 10px;
       left: 18px;
       right: 18px;
-      height: 26%;
+      height: 24%;
       border-radius: 999px;
-      background: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,0));
+      background: linear-gradient(180deg, rgba(255,255,255,.38), rgba(255,255,255,0));
       filter: blur(6px);
       pointer-events:none;
     }
     .logo-float img {
       width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
       border-radius: 24px;
-      background: rgba(255,255,255,.96);
+      background: rgba(255,255,255,.98);
       position: relative;
       z-index: 1;
       box-shadow: 0 10px 24px rgba(0,0,0,.10);
     }
     @keyframes floatLogo {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-9px); }
+      50% { transform: translateY(-8px); }
     }
 
     .hero-copy {
+      width: 100%;
       max-width: 920px;
       margin: 0 auto;
       text-align: center;
-      padding-bottom: 6px;
+      padding-bottom: 8px;
     }
     .eyebrow {
       display: inline-flex;
@@ -474,7 +479,7 @@
       position: fixed;
       left: 12px;
       right: 12px;
-      bottom: 12px;
+      bottom: calc(12px + env(safe-area-inset-bottom));
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
@@ -485,7 +490,7 @@
     }
 
     footer {
-      padding: 28px 16px 108px;
+      padding: 28px 16px calc(108px + env(safe-area-inset-bottom));
       text-align: center;
       color: #6a7890;
       font-size: 13px;
@@ -493,7 +498,8 @@
 
     @media (min-width: 768px) {
       .hero-inner { padding: 28px 24px 118px; }
-      .logo-float { width: 198px; padding: 18px; }
+      .topbar { padding-top: 24px; }
+      .logo-float { width: 198px; padding: 14px; }
       h1 { font-size: 60px; }
       .lead { font-size: 17px; }
       .hero-buttons,
