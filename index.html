@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>岸和田市で水道でお困りなら希竜設備｜水漏れ修理・排水詰まり・配管工事</title>
-  <meta name="description" content="岸和田市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・水道設備工事に対応。岸和田市、和泉市、泉大津市、貝塚市、泉佐野市、泉南市、その他泉州エリア一帯対応。" />
-  <meta name="keywords" content="水漏れ修理,排水詰まり,配管工事,水道業者,岸和田市,和泉市,泉大津市,貝塚市,泉佐野市,泉南市,泉州" />
+  <meta name="description" content="岸和田市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。岸和田市、和泉市、泉大津市、貝塚市、泉佐野市、泉南市、その他泉州エリア一帯対応。" />
+  <meta name="keywords" content="水漏れ修理,排水詰まり,高圧洗浄,配管工事,水道業者,岸和田市,和泉市,泉大津市,貝塚市,泉佐野市,泉南市,泉州" />
   <meta name="format-detection" content="telephone=yes" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:type" content="website" />
@@ -14,67 +14,78 @@
   <meta property="og:image" content="images/logo.PNG" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0d1c31" />
-  <link rel="preload" as="image" href="images/logo.PNG" />
 
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    :root{
-      --navy:#0d1c31;
-      --blue:#123e73;
-      --gold:#c7a96b;
-      --text:#172334;
-      --muted:#617189;
-      --line:rgba(21,43,76,.08);
-      --shadow:0 20px 60px rgba(7,20,42,.12);
-    }
     body {
       margin: 0;
+      overflow-x: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
-      color: var(--text);
+      color: #172334;
       line-height: 1.75;
       background:
-        radial-gradient(circle at top, rgba(199,169,107,.10), transparent 34%),
+        radial-gradient(circle at top, rgba(199,169,107,.08), transparent 32%),
         linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
+    :root{
+      --navy:#0d1c31;
+      --blue:#123e73;
+      --gold:#c7a96b;
+      --muted:#617189;
+      --line:rgba(21,43,76,.08);
+      --shadow:0 20px 60px rgba(7,20,42,.12);
+    }
+
     .hero {
       position: relative;
-      height: 100svh;
-      min-height: 100svh;
+      height: 100vh;
+      min-height: 100vh;
       overflow: hidden;
       color: #fff;
-      background: #09111c;
+      background: none;
       isolation: isolate;
     }
+
     .slide {
       position: absolute;
       inset: 0;
       background-size: cover;
       background-position: center center;
+      background-repeat: no-repeat;
       opacity: 0;
-      transform: scale(1.04);
-      animation: heroFade 40s infinite ease-in-out;
-      filter: saturate(1.02) contrast(1.03) brightness(.94);
+      transform: scale(1.08);
+      animation: heroFadeZoom 42s infinite ease-in-out;
+      will-change: transform, opacity;
     }
-    .hero::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(8,17,29,.08) 0%, rgba(8,17,29,.04) 18%, rgba(8,17,29,.16) 72%, rgba(8,17,29,.28) 100%);
-      z-index:1;
-      pointer-events:none;
-    }
-    .hero::after { content:none; }
 
-    @keyframes heroFade {
-      0% { opacity: 0; transform: scale(1.06); }
-      6% { opacity: 1; }
-      20% { opacity: 1; transform: scale(1.01); }
-      26% { opacity: 0; }
-      100% { opacity: 0; }
+    .hero::before,
+    .hero::after {
+      content: none;
+    }
+
+    @keyframes heroFadeZoom {
+      0% {
+        opacity: 0;
+        transform: scale(1.10) translate3d(0,0,0);
+      }
+      6% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 1;
+        transform: scale(1.02) translate3d(0,-6px,0);
+      }
+      26% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.10) translate3d(0,0,0);
+      }
     }
 
     .hero-inner {
@@ -84,7 +95,10 @@
       max-width: 1180px;
       height: 100%;
       margin: 0 auto;
-      padding: max(18px, env(safe-area-inset-top)) 18px calc(110px + env(safe-area-inset-bottom));
+      padding:
+        max(18px, env(safe-area-inset-top))
+        18px
+        calc(110px + env(safe-area-inset-bottom));
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -95,48 +109,32 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      padding-top: 8px;
+      padding-top: 10px;
+      background: none;
       pointer-events: none;
     }
 
     .logo-float {
-      width: 158px;
-      padding: 10px;
-      border-radius: 32px;
-      background: linear-gradient(180deg, rgba(255,255,255,.20), rgba(255,255,255,.08));
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(14px) saturate(1.04);
-      -webkit-backdrop-filter: blur(14px) saturate(1.04);
-      box-shadow:
-        0 24px 60px rgba(0,0,0,.18),
-        0 6px 20px rgba(255,255,255,.06) inset;
-      animation: floatLogo 4.8s ease-in-out infinite;
-      position: relative;
-      overflow: hidden;
+      background: none;
+      border: none;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      padding: 0;
       pointer-events: auto;
     }
-    .logo-float::before {
-      content:"";
-      position:absolute;
-      inset: 1px;
-      border-radius: 31px;
-      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,0));
-      pointer-events:none;
-    }
+
     .logo-float img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 24px;
-      background: rgba(255,255,255,.98);
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      width: 165px;
+      border-radius: 30px;
+      background: transparent;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+      animation: floatLogo 4.4s ease-in-out infinite;
     }
+
     @keyframes floatLogo {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-7px); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .hero-copy {
@@ -146,43 +144,47 @@
       text-align: center;
       padding-bottom: 8px;
     }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.26);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       font-size: 11px;
       letter-spacing: .22em;
-      color: rgba(255,255,255,.94);
+      color: rgba(255,255,255,.96);
       margin-bottom: 18px;
       text-transform: uppercase;
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
     }
+
     .eyebrow::before,
-    .eyebrow::after{
-      content:"";
+    .eyebrow::after {
+      content: "";
       width: 18px;
       height: 1px;
-      background: rgba(255,255,255,.7);
-      display:block;
+      background: rgba(255,255,255,.72);
+      display: block;
     }
+
     h1 {
       margin: 0 0 14px;
-      font-size: 35px;
+      font-size: 34px;
       line-height: 1.18;
-      letter-spacing: .05em;
-      text-shadow: 0 8px 24px rgba(0,0,0,.20);
+      letter-spacing: .04em;
+      text-shadow: 0 6px 20px rgba(0,0,0,.18);
     }
+
     .lead {
       margin: 0 auto;
       max-width: 760px;
       font-size: 15px;
-      color: rgba(255,255,255,.96);
-      text-shadow: 0 4px 14px rgba(0,0,0,.18);
+      color: rgba(255,255,255,.97);
+      text-shadow: 0 4px 14px rgba(0,0,0,.16);
     }
 
     .hero-buttons,
@@ -195,77 +197,94 @@
     }
 
     .glass-btn {
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 58px;
       padding: 14px 18px;
-      border-radius: 19px;
+      border-radius: 20px;
       font-weight: 800;
       letter-spacing: .03em;
-      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease, background .2s ease;
       position: relative;
       overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
       backdrop-filter: blur(16px) saturate(1.08);
       -webkit-backdrop-filter: blur(16px) saturate(1.08);
-      border: 1px solid rgba(255,255,255,.20);
+      border: 1px solid rgba(255,255,255,.22);
       box-shadow:
-        0 18px 40px rgba(0,0,0,.14),
-        0 6px 20px rgba(255,255,255,.05) inset;
+        0 14px 34px rgba(0,0,0,.12),
+        inset 0 1px 0 rgba(255,255,255,.18);
     }
-    .glass-btn::before{
-      content:"";
-      position:absolute;
+
+    .glass-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .glass-btn::before {
+      content: "";
+      position: absolute;
       inset: 1px;
-      border-radius: 18px;
+      border-radius: 19px;
       background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0));
-      pointer-events:none;
+      pointer-events: none;
     }
-    .glass-btn span { position: relative; z-index: 1; }
-    .glass-btn:hover { transform: translateY(-2px); }
+
+    .glass-btn span {
+      position: relative;
+      z-index: 1;
+    }
 
     .btn-primary {
-      background: linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(233,240,249,.72) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(240,245,251,.80) 100%);
       color: var(--blue);
     }
+
     .btn-line {
-      background: linear-gradient(180deg, rgba(21,215,96,.88) 0%, rgba(6,199,85,.72) 100%);
+      background: linear-gradient(180deg, rgba(31,221,106,.92) 0%, rgba(6,199,85,.76) 100%);
       color: #fff;
-      border-color: rgba(255,255,255,.14);
     }
+
     .btn-secondary {
-      background: linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.08) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.08) 100%);
       color: #fff;
     }
 
     .section { padding: 40px 16px; }
     .wrap { max-width: 1180px; margin: 0 auto; }
-    .section-header { text-align:center; margin-bottom: 18px; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
     .section-mini {
-      color: #c7a96b;
+      color: var(--gold);
       letter-spacing: .18em;
       font-size: 11px;
       font-weight: 800;
       margin-bottom: 8px;
       text-transform: uppercase;
     }
+
     .section-header h2,
     .panel h2,
     .instagram-card h2,
-    .map-card h2 {
+    .map-card h2,
+    .info-card h2 {
       margin: 0 0 10px;
       font-size: 25px;
       color: var(--navy);
       letter-spacing: .04em;
     }
+
     .panel {
-      background: rgba(255,255,255,.94);
+      background: rgba(255,255,255,.96);
       border-radius: 28px;
       padding: 24px;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.72);
-      backdrop-filter: blur(14px);
+      border: 1px solid rgba(21,43,76,.06);
     }
+
     p { margin: 0 0 12px; font-size: 15px; }
     .list { margin: 0; padding-left: 18px; }
     .list li { margin-bottom: 8px; font-size: 15px; }
@@ -274,25 +293,36 @@
       display: grid;
       gap: 14px;
     }
+
     .card {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(248,251,255,.98) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.99) 0%, rgba(248,251,255,.98) 100%);
       border-radius: 24px;
       padding: 22px 20px;
       box-shadow: var(--shadow);
-      border: 1px solid var(--line);
+      border: 1px solid rgba(21,43,76,.08);
     }
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0 auto auto 0;
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #c7a96b, transparent 75%);
+      background: linear-gradient(90deg, var(--gold), transparent 75%);
     }
-    .card h3 { margin: 0 0 8px; font-size: 18px; color: var(--navy); }
-    .card p { margin: 0; color: var(--muted); }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
 
     .area-box {
       margin-top: 18px;
@@ -301,12 +331,14 @@
       background: linear-gradient(180deg, #f7fbff 0%, #eef5fd 100%);
       border: 1px solid #dce8f5;
     }
+
     .badge-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 14px;
     }
+
     .badge {
       padding: 8px 13px;
       border-radius: 999px;
@@ -323,6 +355,7 @@
       grid-template-columns: 1fr;
       gap: 16px;
     }
+
     .work-card {
       position: relative;
       border-radius: 24px;
@@ -330,41 +363,42 @@
       box-shadow: var(--shadow);
       background: #fff;
     }
-    .work-card::after{
-      content:"";
-      position:absolute;
-      inset:auto 0 0 0;
-      height: 44%;
-      background: linear-gradient(180deg, transparent, rgba(8,17,29,.20));
-      pointer-events:none;
-    }
+
     .work-card img {
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
       transition: transform .5s ease;
     }
-    .work-card:hover img { transform: scale(1.04); }
+
+    .work-card:hover img {
+      transform: scale(1.04);
+    }
 
     .company-grid {
-      display:grid;
+      display: grid;
       gap: 18px;
     }
+
     .info-card,
     .map-card,
     .instagram-card {
-      background: rgba(255,255,255,.96);
+      background: rgba(255,255,255,.97);
       border-radius: 26px;
       padding: 20px;
       box-shadow: var(--shadow);
       border: 1px solid rgba(20,40,70,.06);
     }
+
     .info-row {
       padding: 12px 0;
       border-bottom: 1px solid #e7edf5;
       font-size: 15px;
     }
-    .info-row:last-child { border-bottom: 0; }
+
+    .info-row:last-child {
+      border-bottom: 0;
+    }
 
     .map-frame {
       width: 100%;
@@ -379,6 +413,7 @@
       gap: 12px;
       margin-top: 12px;
     }
+
     .insta-link {
       display: inline-flex;
       align-items: center;
@@ -391,6 +426,7 @@
       box-shadow: 0 14px 30px rgba(0,0,0,.12);
       background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 58%, #fcb045 100%);
     }
+
     .instagram-note {
       font-size: 13px;
       color: #71829b;
@@ -407,25 +443,28 @@
       padding: 24px;
       box-shadow: 0 22px 60px rgba(10,31,67,.18);
     }
-    .contact-box::before{
-      content:"";
-      position:absolute;
-      inset:0;
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
       background: linear-gradient(90deg, rgba(255,255,255,.04), transparent 35%);
-      pointer-events:none;
+      pointer-events: none;
     }
+
     .contact-title {
       margin: 0 0 8px;
       font-size: 26px;
-      position:relative;
-      z-index:1;
+      position: relative;
+      z-index: 1;
     }
+
     .contact-note {
       margin: 0 0 16px;
       font-size: 14px;
       color: rgba(255,255,255,.86);
-      position:relative;
-      z-index:1;
+      position: relative;
+      z-index: 1;
     }
 
     .floating-cta {
@@ -438,7 +477,6 @@
       gap: 10px;
       z-index: 1000;
     }
-    .floating-cta a { min-height: 58px; }
 
     footer {
       padding: 28px 16px calc(108px + env(safe-area-inset-bottom));
@@ -448,21 +486,46 @@
     }
 
     @media (min-width: 768px) {
-      .hero-inner { padding: 22px 24px 118px; }
-      .topbar { padding-top: 12px; }
-      .logo-float { width: 186px; padding: 12px; }
-      h1 { font-size: 60px; }
-      .lead { font-size: 17px; }
+      .hero-inner {
+        padding: 22px 24px 118px;
+      }
+
+      .logo-float img {
+        width: 185px;
+      }
+
+      h1 {
+        font-size: 60px;
+      }
+
+      .lead {
+        font-size: 17px;
+      }
+
       .hero-buttons,
       .contact-actions {
         grid-template-columns: 220px 220px 220px;
         width: fit-content;
         max-width: none;
       }
-      .section { padding: 60px 24px; }
-      .cards { grid-template-columns: 1fr 1fr; }
-      .works-grid { grid-template-columns: 1fr 1fr 1fr; }
-      .company-grid { grid-template-columns: 1.05fr .95fr; align-items: start; }
+
+      .section {
+        padding: 60px 24px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .company-grid {
+        grid-template-columns: 1.05fr .95fr;
+        align-items: start;
+      }
+
       .floating-cta {
         left: auto;
         right: 24px;
@@ -471,19 +534,50 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "希竜設備",
+    "image": "images/logo.PNG",
+    "telephone": "080-3868-8596",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "596-0072",
+      "addressRegion": "大阪府",
+      "addressLocality": "岸和田市",
+      "streetAddress": "堺町7-9-303",
+      "addressCountry": "JP"
+    },
+    "areaServed": [
+      "岸和田市",
+      "和泉市",
+      "泉大津市",
+      "貝塚市",
+      "泉佐野市",
+      "泉南市",
+      "泉州エリア"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr"
+    ],
+    "description": "岸和田市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。"
+  }
+  </script>
 </head>
 <body>
   <header class="hero">
     <div class="slide" style="background-image:url('images/kyusui.PNG'); animation-delay: 0s;"></div>
-    <div class="slide" style="background-image:url('images/gesui.PNG'); animation-delay: 8s;"></div>
-    <div class="slide" style="background-image:url('images/2soushink.PNG'); animation-delay: 16s;"></div>
-    <div class="slide" style="background-image:url('images/2ren senmendai.PNG'); animation-delay: 24s;"></div>
-    <div class="slide" style="background-image:url('images/junior toilet.PNG'); animation-delay: 32s;"></div>
+    <div class="slide" style="background-image:url('images/gesui.PNG'); animation-delay: 8.4s;"></div>
+    <div class="slide" style="background-image:url('images/2soushink.PNG'); animation-delay: 16.8s;"></div>
+    <div class="slide" style="background-image:url('images/2ren senmendai.PNG'); animation-delay: 25.2s;"></div>
+    <div class="slide" style="background-image:url('images/junior toilet.PNG'); animation-delay: 33.6s;"></div>
 
     <div class="hero-inner">
       <div class="topbar">
         <div class="logo-float">
-          <img src="images/logo.PNG" alt="希竜設備 ロゴ" />
+          <img src="images/logo.PNG" alt="希竜設備 ロゴ">
         </div>
       </div>
 
@@ -494,6 +588,7 @@
           水漏れ修理・排水詰まり・配管工事など、
           水回りのお困りごとに丁寧に対応します。
         </p>
+
         <div class="hero-buttons">
           <a class="glass-btn btn-primary" href="tel:08038688596"><span>電話で相談する</span></a>
           <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで相談する</span></a>
@@ -568,12 +663,12 @@
         <h2>施工実績</h2>
       </div>
       <div class="works-grid">
-        <div class="work-card"><img src="images/kyusui.PNG" alt="施工事例 1" /></div>
-        <div class="work-card"><img src="images/gesui.PNG" alt="施工事例 2" /></div>
-        <div class="work-card"><img src="images/2soushink.PNG" alt="施工事例 3" /></div>
-        <div class="work-card"><img src="images/2ren senmendai.PNG" alt="施工事例 4" /></div>
-        <div class="work-card"><img src="images/junior hand.PNG" alt="施工事例 5" /></div>
-        <div class="work-card"><img src="images/junior toilet.PNG" alt="施工事例 6" /></div>
+        <div class="work-card"><img src="images/kyusui.PNG" alt="施工事例 1"></div>
+        <div class="work-card"><img src="images/gesui.PNG" alt="施工事例 2"></div>
+        <div class="work-card"><img src="images/2soushink.PNG" alt="施工事例 3"></div>
+        <div class="work-card"><img src="images/2ren senmendai.PNG" alt="施工事例 4"></div>
+        <div class="work-card"><img src="images/junior hand.PNG" alt="施工事例 5"></div>
+        <div class="work-card"><img src="images/junior toilet.PNG" alt="施工事例 6"></div>
       </div>
     </div>
   </section>
