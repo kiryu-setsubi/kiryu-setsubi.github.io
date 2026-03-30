@@ -10,21 +10,35 @@
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="岸和田市で水道でお困りなら希竜設備" />
-  <meta property="og:description" content="水漏れ修理・排水詰まり・配管工事など、水回りのお困りごとに対応します。" />
+  <meta property="og:description" content="水漏れ修理・排水詰まり・配管工事など、水回りのお困りごとに丁寧に対応します。" />
   <meta property="og:image" content="images/logo.PNG" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0c3c78" />
+  <meta name="theme-color" content="#0d1c31" />
   <link rel="preload" as="image" href="images/logo.PNG" />
 
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    :root{
+      --navy:#0d1c31;
+      --navy-deep:#08111d;
+      --blue:#123e73;
+      --blue-soft:#1e5ea8;
+      --gold:#c7a96b;
+      --white:#ffffff;
+      --text:#172334;
+      --muted:#617189;
+      --line:rgba(21,43,76,.08);
+      --shadow:0 20px 60px rgba(7,20,42,.12);
+    }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: linear-gradient(180deg, #f5f8fc 0%, #eef3f9 100%);
-      color: #101722;
-      line-height: 1.7;
+      color: var(--text);
+      line-height: 1.75;
+      background:
+        radial-gradient(circle at top, rgba(199,169,107,.10), transparent 34%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
@@ -34,7 +48,8 @@
       min-height: 100svh;
       overflow: hidden;
       color: #fff;
-      background: #08111c;
+      background: #09111c;
+      isolation: isolate;
     }
     .slide {
       position: absolute;
@@ -42,215 +57,350 @@
       background-size: cover;
       background-position: center center;
       opacity: 0;
-      transform: scale(1.06);
-      animation: heroFade 30s infinite ease-in-out;
-      filter: saturate(0.98) contrast(1.03);
+      transform: scale(1.08);
+      animation: heroFade 40s infinite ease-in-out;
+      filter: saturate(1.03) contrast(1.04) brightness(.9);
     }
     .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+      content:"";
+      position:absolute;
+      inset:0;
       background:
-        linear-gradient(180deg, rgba(5,13,24,.42) 0%, rgba(4,13,24,.22) 28%, rgba(5,13,24,.68) 100%),
-        radial-gradient(circle at top, rgba(38,127,218,.30), transparent 42%);
-      z-index: 1;
+        linear-gradient(180deg, rgba(8,17,29,.20) 0%, rgba(8,17,29,.10) 20%, rgba(8,17,29,.62) 72%, rgba(8,17,29,.82) 100%),
+        radial-gradient(circle at top, rgba(255,255,255,.08), transparent 30%);
+      z-index:1;
+    }
+    .hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, transparent 52%, rgba(8,17,29,.22) 70%, rgba(8,17,29,.48) 100%);
+      z-index:1;
     }
     @keyframes heroFade {
-      0%   { opacity: 0; transform: scale(1.08); }
-      8%   { opacity: 1; }
-      20%  { opacity: 1; transform: scale(1.03); }
-      28%  { opacity: 0; }
+      0% { opacity: 0; transform: scale(1.10); }
+      6% { opacity: 1; }
+      20% { opacity: 1; transform: scale(1.02); }
+      26% { opacity: 0; }
       100% { opacity: 0; }
     }
 
     .hero-inner {
       position: relative;
       z-index: 2;
-      max-width: 1120px;
+      max-width: 1180px;
       min-height: 100svh;
       margin: 0 auto;
-      padding: 24px 16px 100px;
+      padding: 26px 16px 120px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-    .topbar {
-      display: flex;
       align-items: center;
+    }
+
+    .topbar {
+      width: 100%;
+      display: flex;
       justify-content: center;
+      pointer-events: none;
     }
-    .logo-shell {
-      width: 152px;
-      padding: 10px;
-      border-radius: 26px;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 18px 42px rgba(0,0,0,.28);
-      backdrop-filter: blur(10px);
+
+    .logo-float {
+      width: 170px;
+      padding: 16px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.26), rgba(255,255,255,.10));
+      border: 1px solid rgba(255,255,255,.24);
+      backdrop-filter: blur(16px) saturate(1.08);
+      -webkit-backdrop-filter: blur(16px) saturate(1.08);
+      box-shadow:
+        0 30px 70px rgba(0,0,0,.24),
+        0 8px 24px rgba(255,255,255,.08) inset,
+        0 -8px 18px rgba(0,0,0,.06) inset;
+      animation: floatLogo 4.6s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+      pointer-events: auto;
     }
-    .logo-shell img {
-      border-radius: 18px;
-      background: #fff;
+    .logo-float::before {
+      content:"";
+      position:absolute;
+      inset: 1px;
+      border-radius: 33px;
+      background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+    .logo-float::after {
+      content:"";
+      position:absolute;
+      top: 10px;
+      left: 18px;
+      right: 18px;
+      height: 26%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,0));
+      filter: blur(6px);
+      pointer-events:none;
+    }
+    .logo-float img {
+      width: 100%;
+      border-radius: 24px;
+      background: rgba(255,255,255,.96);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+    }
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-9px); }
     }
 
     .hero-copy {
+      max-width: 920px;
+      margin: 0 auto;
       text-align: center;
-      padding-bottom: 10px;
+      padding-bottom: 6px;
     }
     .eyebrow {
-      display: inline-block;
-      padding: 6px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.30);
-      background: rgba(255,255,255,.09);
-      letter-spacing: .16em;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(12px);
       font-size: 11px;
-      margin-bottom: 16px;
+      letter-spacing: .22em;
+      color: rgba(255,255,255,.94);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      box-shadow: 0 12px 30px rgba(0,0,0,.10);
+    }
+    .eyebrow::before,
+    .eyebrow::after{
+      content:"";
+      width: 18px;
+      height: 1px;
+      background: rgba(255,255,255,.7);
+      display:block;
     }
     h1 {
-      margin: 0 0 12px;
-      font-size: 34px;
-      letter-spacing: .06em;
-      line-height: 1.15;
-      text-shadow: 0 6px 20px rgba(0,0,0,.25);
+      margin: 0 0 14px;
+      font-size: 35px;
+      line-height: 1.18;
+      letter-spacing: .05em;
+      text-shadow: 0 10px 28px rgba(0,0,0,.28);
     }
     .lead {
-      max-width: 780px;
       margin: 0 auto;
+      max-width: 760px;
       font-size: 15px;
-      color: rgba(255,255,255,.95);
-      text-shadow: 0 4px 16px rgba(0,0,0,.24);
+      color: rgba(255,255,255,.96);
+      text-shadow: 0 6px 18px rgba(0,0,0,.24);
     }
+
     .hero-buttons,
     .contact-actions {
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
-      margin: 26px auto 0;
+      margin: 28px auto 0;
       max-width: 430px;
     }
-    .btn {
+
+    .glass-btn {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height: 58px;
       padding: 14px 18px;
-      text-align: center;
-      border-radius: 14px;
-      font-weight: 700;
-      letter-spacing: .02em;
-      transition: transform .2s ease, opacity .2s ease;
+      border-radius: 19px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease, background .2s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(16px) saturate(1.08);
+      -webkit-backdrop-filter: blur(16px) saturate(1.08);
+      border: 1px solid rgba(255,255,255,.20);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,.18),
+        0 6px 20px rgba(255,255,255,.06) inset;
     }
-    .btn:hover { transform: translateY(-1px); }
+    .glass-btn::before{
+      content:"";
+      position:absolute;
+      inset: 1px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+    .glass-btn::after{
+      content:"";
+      position:absolute;
+      top: 8px;
+      left: 16px;
+      right: 16px;
+      height: 34%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.34), rgba(255,255,255,0));
+      filter: blur(5px);
+      pointer-events:none;
+    }
+    .glass-btn span {
+      position: relative;
+      z-index: 1;
+    }
+    .glass-btn:hover { transform: translateY(-2px); }
+
     .btn-primary {
-      background: #ffffff;
-      color: #0b3f7d;
-      box-shadow: 0 14px 28px rgba(0,0,0,.18);
-    }
-    .btn-secondary {
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.28);
-      color: #fff;
-      backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(255,255,255,.88) 0%, rgba(233,240,249,.62) 100%);
+      color: var(--blue);
     }
     .btn-line {
-      background: #06c755;
+      background: linear-gradient(180deg, rgba(21,215,96,.84) 0%, rgba(6,199,85,.66) 100%);
       color: #fff;
-      box-shadow: 0 14px 28px rgba(0,0,0,.18);
+      border-color: rgba(255,255,255,.14);
+    }
+    .btn-secondary {
+      background: linear-gradient(180deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.06) 100%);
+      color: #fff;
     }
 
-    .section {
-      padding: 34px 16px;
+    .section { padding: 40px 16px; }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    .section-header { text-align:center; margin-bottom: 18px; }
+    .section-mini {
+      color: #c7a96b;
+      letter-spacing: .18em;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
-    .wrap {
-      max-width: 1120px;
-      margin: 0 auto;
+    .section-header h2,
+    .panel h2,
+    .instagram-card h2,
+    .map-card h2 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      color: var(--navy);
+      letter-spacing: .04em;
     }
     .panel {
-      background: rgba(255,255,255,.96);
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 14px 40px rgba(10, 31, 67, .08);
-      border: 1px solid rgba(18,46,86,.05);
+      background: rgba(255,255,255,.94);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
     }
-    h2 {
-      margin: 0 0 14px;
-      font-size: 24px;
-      color: #0c3c78;
-      letter-spacing: .03em;
-    }
-    p {
-      margin: 0 0 12px;
-      font-size: 15px;
-    }
-    .list {
-      margin: 0;
-      padding-left: 18px;
-    }
-    .list li {
-      margin-bottom: 8px;
-      font-size: 15px;
-    }
+    p { margin: 0 0 12px; font-size: 15px; }
+    .list { margin: 0; padding-left: 18px; }
+    .list li { margin-bottom: 8px; font-size: 15px; }
+
     .cards {
       display: grid;
       gap: 14px;
     }
     .card {
-      background: rgba(255,255,255,.98);
-      border-radius: 20px;
-      padding: 18px;
-      box-shadow: 0 14px 40px rgba(10, 31, 67, .08);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(248,251,255,.98) 100%);
+      border-radius: 24px;
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #c7a96b, transparent 75%);
     }
     .card h3 {
       margin: 0 0 8px;
       font-size: 18px;
-      color: #11284c;
+      color: var(--navy);
     }
     .card p {
       margin: 0;
-      color: #435066;
+      color: var(--muted);
     }
 
     .area-box {
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 18px;
-      background: #f3f8fe;
-      border: 1px solid #d8e6f8;
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #f7fbff 0%, #eef5fd 100%);
+      border: 1px solid #dce8f5;
     }
     .badge-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
     .badge {
-      padding: 8px 12px;
+      padding: 8px 13px;
       border-radius: 999px;
-      background: #edf5ff;
-      color: #134885;
+      background: #fff;
+      color: var(--blue);
       font-size: 13px;
-      font-weight: 700;
-      border: 1px solid #d7e8ff;
+      font-weight: 800;
+      border: 1px solid #dbe7f3;
+      box-shadow: 0 6px 16px rgba(17,40,76,.05);
     }
 
     .works-intro {
-      margin-bottom: 16px;
-      color: #415067;
+      margin-bottom: 18px;
+      color: var(--muted);
+      text-align:center;
     }
     .works-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 16px;
     }
     .work-card {
-      background: #fff;
-      border-radius: 20px;
+      position: relative;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 14px 40px rgba(10, 31, 67, .08);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+    .work-card::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height: 44%;
+      background: linear-gradient(180deg, transparent, rgba(8,17,29,.20));
+      pointer-events:none;
     }
     .work-card img {
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
+      transition: transform .5s ease;
     }
+    .work-card:hover img { transform: scale(1.04); }
 
+    .company-grid {
+      display:grid;
+      gap: 18px;
+    }
+    .info-card,
+    .map-card,
+    .instagram-card {
+      background: rgba(255,255,255,.96);
+      border-radius: 26px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(20,40,70,.06);
+    }
     .info-row {
       padding: 12px 0;
       border-bottom: 1px solid #e7edf5;
@@ -258,59 +408,66 @@
     }
     .info-row:last-child { border-bottom: 0; }
 
-    .map-card, .instagram-card {
-      margin-top: 18px;
-      background: #fff;
-      border-radius: 20px;
-      padding: 16px;
-      box-shadow: 0 14px 40px rgba(10, 31, 67, .08);
-    }
     .map-frame {
       width: 100%;
-      height: 320px;
+      height: 340px;
       border: 0;
-      border-radius: 18px;
+      border-radius: 20px;
+      margin-top: 10px;
     }
 
-    .instagram-card p {
-      color: #415067;
-    }
     .insta-box {
       display: grid;
       gap: 12px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
     .insta-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
+      min-height: 56px;
       padding: 14px 16px;
-      border-radius: 14px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 55%, #fcb045 100%);
+      border-radius: 16px;
+      font-weight: 800;
       color: #fff;
+      box-shadow: 0 14px 30px rgba(0,0,0,.12);
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 58%, #fcb045 100%);
     }
     .instagram-note {
       font-size: 13px;
-      color: #64748b;
+      color: #71829b;
     }
 
     .contact-box {
-      background: linear-gradient(160deg, #0c3c78 0%, #08111f 100%);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(199,169,107,.22), transparent 28%),
+        linear-gradient(160deg, #11294b 0%, #09111d 100%);
       color: #fff;
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 14px 40px rgba(10, 31, 67, .14);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 22px 60px rgba(10,31,67,.18);
+    }
+    .contact-box::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(90deg, rgba(255,255,255,.04), transparent 35%);
+      pointer-events:none;
     }
     .contact-title {
       margin: 0 0 8px;
-      font-size: 24px;
+      font-size: 26px;
+      position:relative;
+      z-index:1;
     }
     .contact-note {
       margin: 0 0 16px;
       font-size: 14px;
-      color: rgba(255,255,255,.9);
+      color: rgba(255,255,255,.86);
+      position:relative;
+      z-index:1;
     }
 
     .floating-cta {
@@ -324,63 +481,36 @@
       z-index: 1000;
     }
     .floating-cta a {
-      min-height: 54px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 16px;
-      color: #fff;
-      font-weight: 800;
-      box-shadow: 0 12px 28px rgba(0,0,0,.2);
-      backdrop-filter: blur(8px);
+      min-height: 58px;
     }
-    .floating-tel { background: rgba(12, 60, 120, .96); }
-    .floating-line { background: rgba(6, 199, 85, .96); }
 
     footer {
-      padding: 28px 16px 106px;
+      padding: 28px 16px 108px;
       text-align: center;
-      color: #607086;
+      color: #6a7890;
       font-size: 13px;
     }
 
     @media (min-width: 768px) {
-      .hero-inner {
-        padding: 30px 24px 110px;
-      }
-      .logo-shell {
-        width: 190px;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 58px;
-      }
-      .lead {
-        font-size: 17px;
-      }
+      .hero-inner { padding: 28px 24px 118px; }
+      .logo-float { width: 198px; padding: 18px; }
+      h1 { font-size: 60px; }
+      .lead { font-size: 17px; }
       .hero-buttons,
       .contact-actions {
         grid-template-columns: 220px 220px 220px;
-        max-width: none;
         width: fit-content;
+        max-width: none;
       }
-      .section {
-        padding: 54px 24px;
-      }
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-      .works-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-      .panel {
-        padding: 30px;
-      }
+      .section { padding: 60px 24px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .works-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .company-grid { grid-template-columns: 1.05fr .95fr; align-items: start; }
       .floating-cta {
         left: auto;
         right: 24px;
         bottom: 24px;
-        width: 320px;
+        width: 330px;
       }
     }
   </style>
@@ -400,19 +530,8 @@
       "streetAddress": "堺町7-9-303",
       "addressCountry": "JP"
     },
-    "areaServed": [
-      "岸和田市",
-      "和泉市",
-      "泉大津市",
-      "貝塚市",
-      "泉佐野市",
-      "泉南市",
-      "泉州エリア"
-    ],
-    "sameAs": [
-      "https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr"
-    ],
-    "url": "",
+    "areaServed": ["岸和田市","和泉市","泉大津市","貝塚市","泉佐野市","泉南市","泉州エリア"],
+    "sameAs": ["https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr"],
     "description": "岸和田市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・水道設備工事に対応。"
   }
   </script>
@@ -420,28 +539,29 @@
 <body>
   <header class="hero">
     <div class="slide" style="background-image:url('images/kyusui.PNG'); animation-delay: 0s;"></div>
-    <div class="slide" style="background-image:url('images/gesui.PNG'); animation-delay: 6s;"></div>
-    <div class="slide" style="background-image:url('images/2soushink.PNG'); animation-delay: 12s;"></div>
-    <div class="slide" style="background-image:url('images/2ren senmendai.PNG'); animation-delay: 18s;"></div>
-    <div class="slide" style="background-image:url('images/junior toilet.PNG'); animation-delay: 24s;"></div>
+    <div class="slide" style="background-image:url('images/gesui.PNG'); animation-delay: 8s;"></div>
+    <div class="slide" style="background-image:url('images/2soushink.PNG'); animation-delay: 16s;"></div>
+    <div class="slide" style="background-image:url('images/2ren senmendai.PNG'); animation-delay: 24s;"></div>
+    <div class="slide" style="background-image:url('images/junior toilet.PNG'); animation-delay: 32s;"></div>
+
     <div class="hero-inner">
       <div class="topbar">
-        <div class="logo-shell">
+        <div class="logo-float">
           <img src="images/logo.PNG" alt="希竜設備 ロゴ" />
         </div>
       </div>
 
       <div class="hero-copy">
-        <div class="eyebrow">KISHIWADA / SENSHU AREA</div>
+        <div class="eyebrow">KIRYU SETSUBI</div>
         <h1>岸和田市で水道でお困りなら希竜設備！</h1>
         <p class="lead">
           水漏れ修理・排水詰まり・配管工事など、
           水回りのお困りごとに丁寧に対応します。
         </p>
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="tel:08038688596">電話で相談する</a>
-          <a class="btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
-          <a class="btn btn-secondary" href="#works">施工実績を見る</a>
+          <a class="glass-btn btn-primary" href="tel:08038688596"><span>電話で相談する</span></a>
+          <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで相談する</span></a>
+          <a class="glass-btn btn-secondary" href="#works"><span>施工実績を見る</span></a>
         </div>
       </div>
     </div>
@@ -450,10 +570,11 @@
   <section class="section">
     <div class="wrap">
       <div class="panel">
-        <h2>会社紹介</h2>
+        <div class="section-mini">About</div>
+        <h2>信頼感を伝える、丁寧な水道設備工事</h2>
         <p>
           希竜設備は、水漏れ修理・排水詰まり・配管工事・水回りリフォームなど、
-          生活に欠かせない設備工事を丁寧に行う水道設備会社です。
+          暮らしに欠かせない設備工事を一つひとつ丁寧に対応する水道設備会社です。
         </p>
         <ul class="list">
           <li>水漏れ修理</li>
@@ -478,11 +599,14 @@
 
   <section class="section">
     <div class="wrap">
-      <h2>サービス</h2>
+      <div class="section-header">
+        <div class="section-mini">Service</div>
+        <h2>対応サービス</h2>
+      </div>
       <div class="cards">
         <div class="card">
           <h3>水漏れ・詰まり修理</h3>
-          <p>突然の水回りトラブルにも、状況を見ながら丁寧に対応します。</p>
+          <p>突然の水回りトラブルにも、現場を見ながら丁寧に対応します。</p>
         </div>
         <div class="card">
           <h3>配管工事</h3>
@@ -502,7 +626,10 @@
 
   <section class="section" id="works">
     <div class="wrap">
-      <h2>施工実績</h2>
+      <div class="section-header">
+        <div class="section-mini">Works</div>
+        <h2>施工実績</h2>
+      </div>
       <p class="works-intro">
         現在アップ済みの画像ファイル名に合わせて組み込み済みです。画像を差し替える時は、同じ名前で上書きすればそのまま反映されます。
       </p>
@@ -517,22 +644,10 @@
     </div>
   </section>
 
-  <section class="section" id="instagram">
-    <div class="wrap">
-      <div class="instagram-card">
-        <h2>Instagram</h2>
-        <p>施工事例や日々の発信はInstagramでもご覧いただけます。</p>
-        <div class="insta-box">
-          <a class="insta-link" href="https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
-          <div class="instagram-note">※ Instagramはアプリやブラウザで開きます。</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section">
-    <div class="wrap">
-      <div class="panel">
+    <div class="wrap company-grid">
+      <div class="info-card">
+        <div class="section-mini">Company</div>
         <h2>会社情報</h2>
         <div class="info-row"><strong>会社名：</strong>希竜設備</div>
         <div class="info-row"><strong>代表：</strong>宮野竜平</div>
@@ -540,8 +655,11 @@
         <div class="info-row"><strong>所在地：</strong>〒596-0072 大阪府岸和田市堺町7-9-303</div>
         <div class="info-row"><strong>営業時間：</strong>8:00〜18:00</div>
         <div class="info-row"><strong>定休日：</strong>日曜日</div>
+      </div>
 
+      <div>
         <div class="map-card">
+          <div class="section-mini">Access</div>
           <h2>アクセス</h2>
           <iframe
             class="map-frame"
@@ -549,11 +667,20 @@
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-            title="希竜設備の所在地">
-          </iframe>
+            title="希竜設備の所在地"></iframe>
           <p style="margin-top:12px;">
-            <a class="btn btn-primary" href="https://maps.app.goo.gl/n8WvwkqaZwuxyGdr5?g_st=il" target="_blank" rel="noopener noreferrer">Googleマップで開く</a>
+            <a class="glass-btn btn-primary" href="https://maps.app.goo.gl/n8WvwkqaZwuxyGdr5?g_st=il" target="_blank" rel="noopener noreferrer"><span>Googleマップで開く</span></a>
           </p>
+        </div>
+
+        <div class="instagram-card" style="margin-top:18px;">
+          <div class="section-mini">Instagram</div>
+          <h2>施工事例や日々の発信</h2>
+          <p>Instagramでも施工写真や日々の発信をご覧いただけます。</p>
+          <div class="insta-box">
+            <a class="insta-link" href="https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+            <div class="instagram-note">※ Instagramはアプリまたはブラウザで開きます。</div>
+          </div>
         </div>
       </div>
     </div>
@@ -562,20 +689,21 @@
   <section class="section" id="contact">
     <div class="wrap">
       <div class="contact-box">
+        <div class="section-mini" style="color: rgba(255,255,255,.78); position:relative; z-index:1;">Contact</div>
         <h2 class="contact-title">お問い合わせ</h2>
         <p class="contact-note">お見積り・ご相談は、お電話またはLINEからご連絡ください。</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="tel:08038688596">今すぐ電話する</a>
-          <a class="btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
-          <a class="btn btn-secondary" href="https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+        <div class="contact-actions" style="position:relative; z-index:1;">
+          <a class="glass-btn btn-primary" href="tel:08038688596"><span>今すぐ電話する</span></a>
+          <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで相談する</span></a>
+          <a class="glass-btn btn-secondary" href="https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr" target="_blank" rel="noopener noreferrer"><span>Instagramを見る</span></a>
         </div>
       </div>
     </div>
   </section>
 
   <div class="floating-cta" aria-label="固定お問い合わせボタン">
-    <a href="tel:08038688596" class="floating-tel">📞 電話する</a>
-    <a href="https://lin.ee/rc1EXRd" class="floating-line" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+    <a class="glass-btn btn-primary" href="tel:08038688596"><span>📞 電話する</span></a>
+    <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで相談</span></a>
   </div>
 
   <footer>
