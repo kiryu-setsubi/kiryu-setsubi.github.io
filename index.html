@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>希竜設備 | 水回りのトラブルに迅速対応</title>
-  <meta
-    name="description"
-    content="希竜設備。漏水修理、排水詰まり、給水・排水工事、住設機器交換、リフォームまで大阪エリアで対応。まずはお気軽にご相談ください。"
-  />
+  <title>希竜設備｜岸和田市の水道修理・配管工事・設備工事</title>
+  <meta name="description" content="岸和田市の希竜設備。漏水修理、排水詰まり、給排水工事、住設機器取替、リフォームまで対応。LINE相談・電話相談受付中。" />
+  <meta name="format-detection" content="telephone=no" />
+
   <style>
     :root{
+      --bg:#eef4f8;
+      --bg2:#f8fbfd;
       --white:#ffffff;
-      --muted:rgba(255,255,255,0.82);
-      --soft:rgba(255,255,255,0.14);
-      --soft2:rgba(255,255,255,0.08);
-      --line:#18c74f;
-      --blue:#2f7ed8;
-      --shadow:0 20px 60px rgba(0,0,0,0.38);
+      --text:#1f2d3d;
+      --text-soft:#5f6f7f;
+      --line:#21c95b;
+      --line-dark:#08140c;
+      --blue:#2d6cdf;
+      --blue-dark:#1d4d91;
+      --border:rgba(31,45,61,0.08);
+      --shadow:0 14px 40px rgba(26,54,93,0.10);
+      --shadow-strong:0 20px 60px rgba(26,54,93,0.16);
       --max:1180px;
+      --radius:26px;
     }
 
     *{ box-sizing:border-box; }
@@ -26,8 +31,8 @@
     body{
       margin:0;
       font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
-      background:#0a1016;
-      color:var(--white);
+      background:linear-gradient(to bottom, var(--bg), var(--bg2));
+      color:var(--text);
       line-height:1.75;
     }
 
@@ -37,8 +42,8 @@
     }
 
     img{
-      max-width:100%;
       display:block;
+      max-width:100%;
     }
 
     .container{
@@ -51,11 +56,12 @@
       top:0;
       left:0;
       width:100%;
-      z-index:50;
-      background:linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0.18));
+      z-index:100;
+      background:rgba(255,255,255,0.82);
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(255,255,255,0.18);
+      border-bottom:1px solid rgba(31,45,61,0.08);
+      box-shadow:0 6px 24px rgba(26,54,93,0.05);
     }
 
     .header-inner{
@@ -72,44 +78,55 @@
       display:flex;
       align-items:center;
       gap:12px;
+      min-width:0;
     }
 
     .brand img{
-      width:42px;
-      height:42px;
+      width:44px;
+      height:44px;
       object-fit:contain;
-      border-radius:12px;
-      background:rgba(255,255,255,0.6);
+      border-radius:14px;
+      background:#fff;
       padding:5px;
+      box-shadow:0 8px 18px rgba(26,54,93,0.10);
+      flex:0 0 auto;
     }
 
     .brand strong{
       font-size:17px;
-      color:#fff;
       letter-spacing:0.08em;
+      color:var(--text);
+      white-space:nowrap;
     }
 
     .header-nav{
       display:flex;
       gap:10px;
       align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .mini-btn{
       padding:10px 15px;
       border-radius:999px;
       font-size:13px;
-      background:rgba(255,255,255,0.16);
-      border:1px solid rgba(255,255,255,0.2);
-      color:#fff;
+      background:#ffffff;
+      border:1px solid rgba(31,45,61,0.08);
+      color:var(--text);
+      box-shadow:0 8px 20px rgba(26,54,93,0.06);
+      transition:0.25s ease;
+    }
+
+    .mini-btn:hover{
+      transform:translateY(-1px);
     }
 
     .mini-btn.line{
-      background:rgba(24,199,79,0.18);
-      border-color:rgba(24,199,79,0.3);
+      background:rgba(33,201,91,0.12);
+      border-color:rgba(33,201,91,0.24);
     }
 
-    /* hero */
     .hero{
       position:relative;
       min-height:100svh;
@@ -130,7 +147,7 @@
       opacity:0;
       transform:scale(1.05);
       animation:heroFade 30s infinite;
-      filter:brightness(0.72);
+      filter:brightness(0.86);
     }
 
     .hero-slide:nth-child(1){ background-image:url("images/2ren senmendai.PNG"); animation-delay:0s; }
@@ -152,7 +169,13 @@
       inset:0;
       z-index:1;
       background:
-        linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, rgba(10,16,22,0.16) 14%, rgba(10,16,22,0.46) 45%, rgba(10,16,22,0.84) 100%);
+        linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.36) 0%,
+          rgba(255,255,255,0.22) 18%,
+          rgba(238,244,248,0.26) 40%,
+          rgba(238,244,248,0.78) 100%
+        );
     }
 
     .hero-inner{
@@ -167,25 +190,28 @@
     }
 
     .hero-box{
-      width:min(100%, 820px);
+      width:min(100%, 880px);
       margin:0 auto;
+      background:rgba(255,255,255,0.58);
+      border:1px solid rgba(255,255,255,0.72);
+      box-shadow:var(--shadow-strong);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-radius:36px;
+      padding:34px 24px;
     }
 
     .hero-logo-wrap{
-      width:190px;
-      height:190px;
-      margin:0 auto 26px;
+      width:180px;
+      height:180px;
+      margin:0 auto 24px;
       border-radius:34px;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,0.14);
-      border:1px solid rgba(255,255,255,0.22);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      box-shadow:
-        0 20px 45px rgba(0,0,0,0.18),
-        inset 0 0 0 1px rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.78);
+      border:1px solid rgba(255,255,255,0.92);
+      box-shadow:0 18px 40px rgba(26,54,93,0.12);
       animation:floatLogo 5s ease-in-out infinite;
     }
 
@@ -195,83 +221,86 @@
     }
 
     .hero-logo{
-      width:140px;
-      height:140px;
+      width:136px;
+      height:136px;
       object-fit:contain;
       background:#fff;
       border-radius:28px;
       padding:14px;
-      box-shadow:0 14px 30px rgba(0,0,0,0.12);
+      box-shadow:0 12px 26px rgba(26,54,93,0.10);
     }
 
     .hero-tag{
       display:inline-block;
       padding:10px 22px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,0.28);
-      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(45,108,223,0.12);
+      background:rgba(255,255,255,0.84);
       font-size:13px;
       letter-spacing:0.24em;
-      color:#fff;
+      color:var(--blue-dark);
       margin-bottom:20px;
+      font-weight:700;
     }
 
     .hero h1{
       margin:0;
-      font-size:clamp(42px, 8vw, 74px);
+      font-size:clamp(40px, 8vw, 74px);
       font-weight:800;
       letter-spacing:0.08em;
       line-height:1.08;
-      text-shadow:0 10px 30px rgba(0,0,0,0.28);
+      color:#16304e;
     }
 
     .hero-lead{
       margin:18px auto 0;
       max-width:760px;
-      font-size:clamp(18px, 3vw, 23px);
-      color:rgba(255,255,255,0.92);
-      line-height:1.8;
-      text-shadow:0 6px 20px rgba(0,0,0,0.28);
+      font-size:clamp(17px, 3vw, 22px);
+      color:#35506b;
+      line-height:1.9;
     }
 
     .hero-actions{
       display:grid;
-      grid-template-columns:1fr;
+      grid-template-columns:1fr 1fr;
       gap:14px;
       width:min(100%, 760px);
-      margin:34px auto 0;
+      margin:32px auto 0;
     }
 
     .hero-btn{
       min-height:74px;
-      border-radius:26px;
+      border-radius:24px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:22px;
+      font-size:21px;
       font-weight:800;
       letter-spacing:0.08em;
       box-shadow:var(--shadow);
+      transition:0.25s ease;
+    }
+
+    .hero-btn:hover{
+      transform:translateY(-2px);
     }
 
     .hero-btn.tel{
       background:#fff;
-      color:#1d4d91;
+      color:var(--blue-dark);
+      border:1px solid rgba(45,108,223,0.10);
     }
 
     .hero-btn.line{
-      background:rgba(11,16,22,0.58);
-      color:#fff;
-      border:1px solid rgba(255,255,255,0.14);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
+      background:var(--line);
+      color:var(--line-dark);
     }
 
     .scroll-note{
       margin-top:18px;
       font-size:12px;
       letter-spacing:0.22em;
-      color:rgba(255,255,255,0.68);
+      color:#5c738b;
     }
 
     section{
@@ -286,21 +315,23 @@
     .section-head .sub{
       font-size:12px;
       letter-spacing:0.22em;
-      color:rgba(255,255,255,0.58);
+      color:#7390ab;
       margin-bottom:12px;
       text-transform:uppercase;
+      font-weight:700;
     }
 
     .section-head h2{
       margin:0;
       font-size:clamp(28px, 5vw, 42px);
-      letter-spacing:0.08em;
+      letter-spacing:0.06em;
+      color:#16304e;
     }
 
     .section-head p{
       margin:14px auto 0;
       width:min(100%, 760px);
-      color:rgba(255,255,255,0.72);
+      color:var(--text-soft);
       font-size:15px;
     }
 
@@ -311,23 +342,22 @@
     }
 
     .service-card{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.88);
+      border:1px solid var(--border);
       border-radius:24px;
       padding:24px 20px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
     }
 
     .service-card h3{
       margin:0 0 10px;
       font-size:21px;
+      color:#183657;
     }
 
     .service-card p{
       margin:0;
-      color:rgba(255,255,255,0.72);
+      color:var(--text-soft);
       font-size:14px;
     }
 
@@ -335,8 +365,8 @@
       position:relative;
       overflow:hidden;
       border-radius:28px;
-      border:1px solid rgba(255,255,255,0.12);
-      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(31,45,61,0.08);
+      background:rgba(255,255,255,0.68);
       padding:18px;
       box-shadow:var(--shadow);
     }
@@ -362,8 +392,9 @@
       flex:0 0 auto;
       border-radius:22px;
       overflow:hidden;
-      background:#101821;
-      border:1px solid rgba(255,255,255,0.1);
+      background:#fff;
+      border:1px solid rgba(31,45,61,0.08);
+      box-shadow:0 12px 30px rgba(26,54,93,0.08);
     }
 
     .work-card img{
@@ -380,18 +411,19 @@
       display:block;
       font-size:18px;
       margin-bottom:8px;
+      color:#183657;
     }
 
     .work-body p{
       margin:0;
-      color:rgba(255,255,255,0.72);
+      color:var(--text-soft);
       font-size:14px;
     }
 
     .cta-banner{
       border-radius:30px;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.1);
+      background:linear-gradient(135deg, rgba(255,255,255,0.94), rgba(239,247,255,0.94));
+      border:1px solid rgba(31,45,61,0.08);
       padding:32px 26px;
       display:grid;
       grid-template-columns:1.1fr 0.9fr;
@@ -404,11 +436,12 @@
       margin:0 0 12px;
       font-size:30px;
       line-height:1.45;
+      color:#183657;
     }
 
     .cta-banner p{
       margin:0;
-      color:rgba(255,255,255,0.76);
+      color:var(--text-soft);
     }
 
     .cta-buttons{
@@ -426,16 +459,23 @@
       align-items:center;
       justify-content:center;
       font-weight:700;
+      transition:0.25s ease;
+      box-shadow:0 10px 24px rgba(26,54,93,0.08);
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
     }
 
     .btn.line{
-      background:#21c95b;
-      color:#07110a;
+      background:var(--line);
+      color:var(--line-dark);
     }
 
     .btn.tel{
       background:#fff;
-      color:#1d4d91;
+      color:var(--blue-dark);
+      border:1px solid rgba(45,108,223,0.10);
     }
 
     .info-grid{
@@ -445,8 +485,8 @@
     }
 
     .info-card{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.88);
+      border:1px solid var(--border);
       border-radius:28px;
       padding:26px 24px;
       box-shadow:var(--shadow);
@@ -455,6 +495,7 @@
     .info-card h3{
       margin:0 0 18px;
       font-size:24px;
+      color:#183657;
     }
 
     .info-list{
@@ -467,7 +508,7 @@
       grid-template-columns:110px 1fr;
       gap:12px;
       padding-bottom:12px;
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      border-bottom:1px solid rgba(31,45,61,0.08);
     }
 
     .info-row:last-child{
@@ -476,14 +517,15 @@
     }
 
     .info-row dt{
-      color:rgba(255,255,255,0.56);
+      color:#7390ab;
       font-size:13px;
       letter-spacing:0.08em;
+      font-weight:700;
     }
 
     .info-row dd{
       margin:0;
-      color:rgba(255,255,255,0.9);
+      color:#30485f;
       font-size:14px;
     }
 
@@ -491,8 +533,8 @@
       display:flex;
       gap:18px;
       align-items:center;
-      background:rgba(24,199,79,0.08);
-      border:1px solid rgba(24,199,79,0.18);
+      background:rgba(33,201,91,0.08);
+      border:1px solid rgba(33,201,91,0.16);
       padding:16px;
       border-radius:22px;
       margin-top:18px;
@@ -504,24 +546,53 @@
       border-radius:14px;
       padding:8px;
       flex:0 0 auto;
+      box-shadow:0 8px 18px rgba(26,54,93,0.06);
     }
 
     .line-box strong{
       display:block;
       margin-bottom:6px;
       font-size:17px;
+      color:#183657;
     }
 
     .line-box p{
       margin:0;
       font-size:14px;
-      color:rgba(255,255,255,0.78);
+      color:var(--text-soft);
+    }
+
+    .map-card{
+      margin-top:20px;
+      background:rgba(255,255,255,0.88);
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .map-card h3{
+      color:#183657;
+    }
+
+    .map-frame{
+      width:100%;
+      height:360px;
+      border:0;
+      border-radius:20px;
+      display:block;
+    }
+
+    .area-note{
+      margin-top:16px;
+      color:var(--text-soft);
+      font-size:14px;
     }
 
     footer{
       padding:42px 0 110px;
       text-align:center;
-      color:rgba(255,255,255,0.52);
+      color:#73879c;
       font-size:13px;
     }
 
@@ -530,11 +601,13 @@
       left:0;
       right:0;
       bottom:0;
-      z-index:60;
+      z-index:120;
       padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-      background:linear-gradient(to top, rgba(8,12,18,0.95), rgba(8,12,18,0.38));
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
+      background:rgba(255,255,255,0.78);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border-top:1px solid rgba(31,45,61,0.08);
+      box-shadow:0 -10px 30px rgba(26,54,93,0.08);
     }
 
     .fixed-inner{
@@ -553,23 +626,23 @@
       justify-content:center;
       font-weight:800;
       letter-spacing:0.06em;
-      box-shadow:var(--shadow);
+      box-shadow:0 10px 24px rgba(26,54,93,0.08);
     }
 
     .fixed-link.tel{
       background:#fff;
-      color:#1d4d91;
+      color:var(--blue-dark);
+      border:1px solid rgba(45,108,223,0.10);
     }
 
     .fixed-link.line{
-      background:#21c95b;
-      color:#07110a;
+      background:var(--line);
+      color:var(--line-dark);
     }
 
     @media (max-width:980px){
       .service-grid,
-      .info-grid,
-      .cta-banner{
+      .info-grid{
         grid-template-columns:1fr 1fr;
       }
 
@@ -595,16 +668,21 @@
         padding:100px 20px 120px;
       }
 
+      .hero-box{
+        padding:28px 18px;
+        border-radius:28px;
+      }
+
       .hero-logo-wrap{
-        width:150px;
-        height:150px;
+        width:148px;
+        height:148px;
         border-radius:28px;
         margin-bottom:22px;
       }
 
       .hero-logo{
-        width:112px;
-        height:112px;
+        width:110px;
+        height:110px;
         border-radius:22px;
       }
 
@@ -615,11 +693,15 @@
       }
 
       .hero h1{
-        font-size:54px;
+        font-size:52px;
       }
 
       .hero-lead{
         font-size:16px;
+      }
+
+      .hero-actions{
+        grid-template-columns:1fr;
       }
 
       .hero-btn{
@@ -649,8 +731,31 @@
         flex-direction:column;
         align-items:flex-start;
       }
+
+      .map-frame{
+        height:300px;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"希竜設備",
+    "telephone":"080-3868-8596",
+    "address":{
+      "@type":"PostalAddress",
+      "postalCode":"596-0072",
+      "addressRegion":"大阪府",
+      "addressLocality":"岸和田市",
+      "streetAddress":"堺町7-9-303",
+      "addressCountry":"JP"
+    },
+    "openingHours":"Mo-Sa 08:00-18:00",
+    "url":"https://kiryu-setsubi.com"
+  }
+  </script>
 </head>
 <body>
 
@@ -663,6 +768,7 @@
 
       <div class="header-nav">
         <a class="mini-btn" href="#works">施工事例</a>
+        <a class="mini-btn" href="#contact">会社情報</a>
         <a class="mini-btn line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer">LINE相談</a>
       </div>
     </div>
@@ -690,8 +796,8 @@
           <h1>希竜設備</h1>
 
           <p class="hero-lead">
-            施工写真をそのまま見せる、信頼感のあるホームページに。<br>
-            水回り・配管・設備工事を、丁寧に美しく仕上げます。
+            水回り・配管・設備工事を丁寧に施工。<br>
+            漏水修理、排水詰まり、住設機器の取替まで幅広く対応します。
           </p>
 
           <div class="hero-actions">
@@ -709,7 +815,7 @@
         <div class="section-head">
           <div class="sub">Service</div>
           <h2>サービス内容</h2>
-          <p>漏水修理から設備交換まで、水回りのお困りごとに幅広く対応しています。</p>
+          <p>漏水修理から住設機器の取替、給排水工事、リフォームまで対応しています。</p>
         </div>
 
         <div class="service-grid">
@@ -717,14 +823,17 @@
             <h3>漏水修理</h3>
             <p>蛇口・配管・継手まわりなど、水漏れトラブルの確認と修理に対応します。</p>
           </article>
+
           <article class="service-card">
             <h3>排水詰まり</h3>
             <p>キッチン、洗面、トイレなど、排水不良や詰まりの改善を行います。</p>
           </article>
+
           <article class="service-card">
             <h3>給排水工事</h3>
             <p>新設・改修にともなう給水・排水配管工事のご相談も可能です。</p>
           </article>
+
           <article class="service-card">
             <h3>住設機器取替</h3>
             <p>トイレ、洗面台、水栓などの設備交換・取替にも対応します。</p>
@@ -738,7 +847,7 @@
         <div class="section-head">
           <div class="sub">Works</div>
           <h2>施工事例</h2>
-          <p>施工写真を自動スライド表示にしています。写真が増えたら同じ形で追加できます。</p>
+          <p>施工写真を自動でスライド表示しています。写真が増えたら同じ形で追加できます。</p>
         </div>
 
         <div class="works-wrap">
@@ -755,7 +864,7 @@
               <img src="images/2soushink.PNG" alt="設備施工">
               <div class="work-body">
                 <strong>設備工事</strong>
-                <p>給排水設備の施工状況がわかりやすい写真を掲載。</p>
+                <p>給排水設備の施工状況がわかりやすい写真を掲載しています。</p>
               </div>
             </article>
 
@@ -803,7 +912,7 @@
               <img src="images/2soushink.PNG" alt="設備施工">
               <div class="work-body">
                 <strong>設備工事</strong>
-                <p>給排水設備の施工状況がわかりやすい写真を掲載。</p>
+                <p>給排水設備の施工状況がわかりやすい写真を掲載しています。</p>
               </div>
             </article>
 
@@ -864,7 +973,7 @@
         <div class="section-head">
           <div class="sub">Contact</div>
           <h2>会社情報・お問い合わせ</h2>
-          <p>住所、営業時間、LINE相談先を掲載して、安心して問い合わせしやすい形にしています。</p>
+          <p>住所、営業時間、電話、LINE相談先をまとめて掲載しています。</p>
         </div>
 
         <div class="info-grid">
@@ -875,6 +984,7 @@
                 <dt>会社名</dt>
                 <dd>希竜設備</dd>
               </div>
+
               <div class="info-row">
                 <dt>住所</dt>
                 <dd>
@@ -882,18 +992,22 @@
                   大阪府岸和田市堺町7-9-303
                 </dd>
               </div>
+
               <div class="info-row">
                 <dt>営業時間</dt>
                 <dd>8:00〜18:00</dd>
               </div>
+
               <div class="info-row">
                 <dt>定休日</dt>
                 <dd>日曜日</dd>
               </div>
+
               <div class="info-row">
                 <dt>電話番号</dt>
                 <dd><a href="tel:08038688596">080-3868-8596</a></dd>
               </div>
+
               <div class="info-row">
                 <dt>対応内容</dt>
                 <dd>漏水修理 / 排水詰まり / 給排水工事 / 住設機器取替 / リフォーム</dd>
@@ -903,7 +1017,7 @@
 
           <div class="info-card">
             <h3>LINEでのお問い合わせ</h3>
-            <p style="margin-top:0; color:rgba(255,255,255,0.78);">
+            <p style="margin-top:0; color:#5f6f7f;">
               写真を送って相談したい方はLINEが便利です。ボタンから直接開けて、QRからも追加できます。
             </p>
 
@@ -915,10 +1029,24 @@
               <img src="line-qr.PNG" alt="LINE QRコード">
               <div>
                 <strong>QRから追加したい方はこちら</strong>
-                <p><b>line-qr.PNG</b> を index.html と同じ場所に置いてください。</p>
+                <p><b>line-qr.PNG</b> を index.html と同じ階層に置いてください。</p>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="map-card">
+          <h3 style="margin:0 0 16px;">アクセス</h3>
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps?q=大阪府岸和田市堺町7-9-303&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <p class="area-note">
+            岸和田市を拠点に、水回り・配管・設備工事のご相談を承っています。
+          </p>
         </div>
       </div>
     </section>
