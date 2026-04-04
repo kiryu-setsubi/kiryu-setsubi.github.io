@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>岸和田市で水道でお困りなら
-    希竜設備｜水漏れ修理・排水詰まり・配管工事</title>
-  <meta name="description" content="岸和田市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。岸和田市、和泉市、泉大津市、貝塚市、泉佐野市、泉南市、その他泉州エリア一帯対応。" />
-  <meta name="keywords" content="水漏れ修理,排水詰まり,高圧洗浄,配管工事,水道業者,岸和田市,和泉市,泉大津市,貝塚市,泉佐野市,泉南市,泉州" />
+  <title>岸和田市・貝塚市で水道でお困りなら希竜設備｜水漏れ修理・排水詰まり・配管工事</title>
+  <meta name="description" content="岸和田市・貝塚市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。岸和田市、貝塚市、和泉市、泉大津市、泉佐野市、泉南市など泉州エリア対応。" />
+  <meta name="keywords" content="岸和田市,貝塚市,水漏れ修理,排水詰まり,高圧洗浄,配管工事,水道業者,和泉市,泉大津市,泉佐野市,泉南市,泉州" />
   <meta name="format-detection" content="telephone=yes" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="岸和田市で水道でお困りなら希竜設備" />
+  <meta property="og:title" content="岸和田市・貝塚市で水道でお困りなら希竜設備" />
   <meta property="og:description" content="水漏れ修理・排水詰まり・配管工事など、水回りのお困りごとに丁寧に対応します。" />
   <meta property="og:image" content="images/logo.PNG" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -22,6 +21,7 @@
     body {
       margin: 0;
       overflow-x: hidden;
+      padding-bottom: calc(130px + env(safe-area-inset-bottom));
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       color: #172334;
       line-height: 1.75;
@@ -69,24 +69,11 @@
     }
 
     @keyframes heroFadeZoom {
-      0% {
-        opacity: 0;
-        transform: scale(1.10) translate3d(0,0,0);
-      }
-      6% {
-        opacity: 1;
-      }
-      20% {
-        opacity: 1;
-        transform: scale(1.02) translate3d(0,-6px,0);
-      }
-      26% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1.10) translate3d(0,0,0);
-      }
+      0% { opacity: 0; transform: scale(1.10) translate3d(0,0,0); }
+      6% { opacity: 1; }
+      20% { opacity: 1; transform: scale(1.02) translate3d(0,-6px,0); }
+      26% { opacity: 0; }
+      100% { opacity: 0; transform: scale(1.10) translate3d(0,0,0); }
     }
 
     .hero-inner {
@@ -99,7 +86,7 @@
       padding:
         max(18px, env(safe-area-inset-top))
         18px
-        calc(110px + env(safe-area-inset-bottom));
+        calc(170px + env(safe-area-inset-bottom));
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -111,16 +98,10 @@
       display: flex;
       justify-content: center;
       padding-top: 10px;
-      background: none;
       pointer-events: none;
     }
 
     .logo-float {
-      background: none;
-      border: none;
-      box-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
       padding: 0;
       pointer-events: auto;
     }
@@ -140,7 +121,7 @@
 
     .hero-copy {
       width: 100%;
-      max-width: 920px;
+      max-width: 980px;
       margin: 0 auto;
       text-align: center;
       padding-bottom: 8px;
@@ -182,7 +163,7 @@
 
     .lead {
       margin: 0 auto;
-      max-width: 760px;
+      max-width: 780px;
       font-size: 15px;
       color: rgba(255,255,255,.97);
       text-shadow: 0 4px 14px rgba(0,0,0,.16);
@@ -193,7 +174,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
-      margin: 28px auto 0;
+      margin: 28px auto 20px;
       max-width: 430px;
     }
 
@@ -217,9 +198,7 @@
         inset 0 1px 0 rgba(255,255,255,.18);
     }
 
-    .glass-btn:hover {
-      transform: translateY(-2px);
-    }
+    .glass-btn:hover { transform: translateY(-2px); }
 
     .glass-btn::before {
       content: "";
@@ -269,6 +248,7 @@
 
     .section-header h2,
     .panel h2,
+    .location-card h2,
     .instagram-card h2,
     .map-card h2,
     .info-card h2 {
@@ -278,7 +258,8 @@
       letter-spacing: .04em;
     }
 
-    .panel {
+    .panel,
+    .location-card {
       background: rgba(255,255,255,.96);
       border-radius: 28px;
       padding: 24px;
@@ -290,7 +271,8 @@
     .list { margin: 0; padding-left: 18px; }
     .list li { margin-bottom: 8px; font-size: 15px; }
 
-    .cards {
+    .cards,
+    .location-grid {
       display: grid;
       gap: 14px;
     }
@@ -372,9 +354,7 @@
       transition: transform .5s ease;
     }
 
-    .work-card:hover img {
-      transform: scale(1.04);
-    }
+    .work-card:hover img { transform: scale(1.04); }
 
     .company-grid {
       display: grid;
@@ -397,9 +377,7 @@
       font-size: 15px;
     }
 
-    .info-row:last-child {
-      border-bottom: 0;
-    }
+    .info-row:last-child { border-bottom: 0; }
 
     .map-frame {
       width: 100%;
@@ -442,6 +420,7 @@
       color: #fff;
       border-radius: 30px;
       padding: 24px;
+      margin-bottom: 28px;
       box-shadow: 0 22px 60px rgba(10,31,67,.18);
     }
 
@@ -488,39 +467,33 @@
 
     @media (min-width: 768px) {
       .hero-inner {
-        padding: 22px 24px 118px;
+        padding: 22px 24px calc(170px + env(safe-area-inset-bottom));
       }
 
-      .logo-float img {
-        width: 185px;
-      }
+      .logo-float img { width: 185px; }
 
-      h1 {
-        font-size: 60px;
-      }
+      h1 { font-size: 60px; }
 
-      .lead {
-        font-size: 17px;
-      }
+      .lead { font-size: 17px; }
 
-      .hero-buttons,
-      .contact-actions {
-        grid-template-columns: 220px 220px 220px;
+      .hero-buttons {
+        grid-template-columns: 220px 220px;
         width: fit-content;
         max-width: none;
       }
 
-      .section {
-        padding: 60px 24px;
+      .contact-actions {
+        grid-template-columns: 220px 220px;
+        width: fit-content;
+        max-width: none;
       }
 
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
+      .section { padding: 60px 24px; }
 
-      .works-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+      .cards,
+      .location-grid { grid-template-columns: 1fr 1fr; }
+
+      .works-grid { grid-template-columns: 1fr 1fr 1fr; }
 
       .company-grid {
         grid-template-columns: 1.05fr .95fr;
@@ -553,9 +526,9 @@
     },
     "areaServed": [
       "岸和田市",
+      "貝塚市",
       "和泉市",
       "泉大津市",
-      "貝塚市",
       "泉佐野市",
       "泉南市",
       "泉州エリア"
@@ -563,12 +536,12 @@
     "sameAs": [
       "https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr"
     ],
-    "description": "岸和田市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。"
+    "description": "岸和田市・貝塚市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。"
   }
   </script>
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="slide" style="background-image:url('images/kyusui.jpg'); animation-delay: 0s;"></div>
     <div class="slide" style="background-image:url('images/gesui.jpg'); animation-delay: 8.4s;"></div>
     <div class="slide" style="background-image:url('images/2soushink.jpg'); animation-delay: 16.8s;"></div>
@@ -584,29 +557,29 @@
 
       <div class="hero-copy">
         <div class="eyebrow">KIRYU SETSUBI</div>
-        <h1>岸和田市の<br>水漏れ修理・排水詰まりなら<br>希竜設備！</h1>
+        <h1>岸和田市・貝塚市の<br>水漏れ修理・排水詰まりなら<br>希竜設備！</h1>
         <p class="lead">
-          岸和田市で水漏れ修理・排水詰まり・配管工事なら希竜設備。
-  地域密着で、急な水回りトラブルにも丁寧かつ迅速に対応します。　
+          岸和田市・貝塚市で水漏れ修理・排水詰まり・配管工事なら希竜設備。<br>
+          地域密着で、急な水回りトラブルにも丁寧かつ迅速に対応します。
         </p>
 
         <div class="hero-buttons">
-          <a class="glass-btn btn-primary" href="tel:08038688596"><span>電話で相談する</span></a>
-          <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで相談する</span></a>
-          <a class="glass-btn btn-secondary" href="#works"><span>施工実績を見る</span></a>
-          <a class="glass-btn btn-secondary" href="#contact"><span>お問い合わせはこちら</span></a>
+          <a class="glass-btn btn-primary" href="tel:08038688596"><span>📞 今すぐ電話で相談（最短対応）</span></a>
+          <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで無料相談（写真OK）</span></a>
+          <a class="glass-btn btn-secondary" href="#works"><span>施工事例を見る</span></a>
+          <a class="glass-btn btn-secondary" href="#contact"><span>無料で見積もりする</span></a>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="section">
+  <section class="section" id="about">
     <div class="wrap">
       <div class="panel">
         <div class="section-mini">About</div>
         <h2>信頼感を伝える、丁寧な水道設備工事</h2>
         <p>
-          希竜設備は、水漏れ修理・排水詰まり・配管工事・水回りリフォームなど、
+          希竜設備は、岸和田市・貝塚市を中心に水漏れ修理・排水詰まり・配管工事・水回りリフォームなど、
           暮らしに欠かせない設備工事を一つひとつ丁寧に対応する水道設備会社です。
         </p>
         <ul class="list">
@@ -618,7 +591,7 @@
         </ul>
 
         <div class="area-box">
-          <p><strong>対応エリア</strong><br>岸和田市、和泉市、泉大津市、貝塚市、泉佐野市、泉南市、その他泉州エリア一帯</p>
+          <p><strong>対応エリア</strong><br>岸和田市、貝塚市、和泉市、泉大津市、泉佐野市、泉南市、その他泉州エリア一帯</p>
           <div class="badge-row">
             <span class="badge">水漏れ修理</span>
             <span class="badge">排水詰まり</span>
@@ -631,7 +604,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="service">
     <div class="wrap">
       <div class="section-header">
         <div class="section-mini">Service</div>
@@ -640,7 +613,7 @@
       <div class="cards">
         <div class="card">
           <h3>水漏れ・詰まり修理</h3>
-          <p>岸和田市を中心に、水漏れ修理や排水詰まりなどのトラブルに迅速対応します。</p>
+          <p>岸和田市・貝塚市を中心に、水漏れ修理や排水詰まりなどのトラブルに迅速対応します。</p>
         </div>
         <div class="card">
           <h3>配管工事</h3>
@@ -658,6 +631,29 @@
     </div>
   </section>
 
+  <section class="section" id="locations">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-mini">Location</div>
+        <h2>拠点情報</h2>
+      </div>
+      <div class="location-grid">
+        <div class="location-card">
+          <div class="section-mini">Kishiwada</div>
+          <h2>岸和田本拠点</h2>
+          <p><strong>所在地</strong><br>〒596-0072 大阪府岸和田市堺町7-9-303</p>
+        </div>
+        <div class="location-card">
+          <div class="section-mini">Kaizuka</div>
+          <h2>貝塚営業所</h2>
+          <p><strong>所在地</strong><br>大阪府貝塚市水間539-2</p>
+          <p><strong>貝塚市倉庫</strong><br>大阪府貝塚市小瀬22</p>
+          <p><a class="glass-btn btn-primary" href="kaizuka.html"><span>貝塚市ページを見る</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="works">
     <div class="wrap">
       <div class="section-header">
@@ -665,12 +661,12 @@
         <h2>施工実績</h2>
       </div>
       <div class="works-grid">
-        <div class="work-card"><img src="images/kyusui.jpg" alt="岸和田市 水漏れ修理 施工事例"></div>
-        <div class="work-card"><img src="images/gesui.jpg" alt="岸和田市 水漏れ修理 施工事例"></div>
-        <div class="work-card"><img src="images/2soushink.jpg" alt="岸和田市 水漏れ修理 施工事例"></div>
-        <div class="work-card"><img src="images/2ren senmendai.jpg" alt="岸和田市 水漏れ修理 施工事例"></div>
-        <div class="work-card"><img src="images/junior hand.jpg" alt="岸和田市 水漏れ修理 施工事例"></div>
-        <div class="work-card"><img src="images/junior toilet.jpg" alt="岸和田市 水漏れ修理 施工事例"></div>
+        <div class="work-card"><img src="images/kyusui.jpg" alt="岸和田市 貝塚市 給水管工事 施工事例"></div>
+        <div class="work-card"><img src="images/gesui.jpg" alt="岸和田市 貝塚市 排水管工事 施工事例"></div>
+        <div class="work-card"><img src="images/2soushink.jpg" alt="岸和田市 貝塚市 ポンプ交換工事 施工事例"></div>
+        <div class="work-card"><img src="images/2ren senmendai.jpg" alt="岸和田市 貝塚市 洗面台交換工事 施工事例"></div>
+        <div class="work-card"><img src="images/junior hand.jpg" alt="岸和田市 貝塚市 手洗い器設置工事 施工事例"></div>
+        <div class="work-card"><img src="images/junior toilet.jpg" alt="岸和田市 貝塚市 トイレ交換工事 施工事例"></div>
       </div>
     </div>
   </section>
@@ -683,7 +679,9 @@
         <div class="info-row"><strong>会社名：</strong>希竜設備</div>
         <div class="info-row"><strong>代表：</strong>宮野竜平</div>
         <div class="info-row"><strong>電話番号：</strong><a href="tel:08038688596">080-3868-8596</a></div>
-        <div class="info-row"><strong>所在地：</strong>〒596-0072 大阪府岸和田市堺町7-9-303（岸和田市の水道業者）</div>
+        <div class="info-row"><strong>岸和田本拠点：</strong>〒596-0072 大阪府岸和田市堺町7-9-303</div>
+        <div class="info-row"><strong>貝塚営業所：</strong>大阪府貝塚市水間539-2</div>
+        <div class="info-row"><strong>貝塚市倉庫：</strong>大阪府貝塚市小瀬22</div>
         <div class="info-row"><strong>営業時間：</strong>8:00〜18:00</div>
         <div class="info-row"><strong>定休日：</strong>日曜日</div>
       </div>
@@ -691,14 +689,14 @@
       <div>
         <div class="map-card">
           <div class="section-mini">Access</div>
-          <h2>アクセス</h2>
+          <h2>岸和田本拠点アクセス</h2>
           <iframe
             class="map-frame"
             src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%B2%B8%E5%92%8C%E7%94%B0%E5%B8%82%E5%A0%BA%E7%94%BA7-9-303&z=16&output=embed"
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-            title="希竜設備の所在地"></iframe>
+            title="希竜設備 岸和田本拠点"></iframe>
           <p style="margin-top:12px;">
             <a class="glass-btn btn-primary" href="https://maps.app.goo.gl/n8WvwkqaZwuxyGdr5?g_st=il" target="_blank" rel="noopener noreferrer"><span>Googleマップで開く</span></a>
           </p>
@@ -722,9 +720,12 @@
       <div class="contact-box">
         <div class="section-mini" style="color: rgba(255,255,255,.78); position:relative; z-index:1;">Contact</div>
         <h2 class="contact-title">お問い合わせ</h2>
-        <p class="contact-note">お見積り・ご相談は、お電話またはLINEからご連絡ください。</p>
+        <p class="contact-note">
+          岸和田市・貝塚市の水漏れ・詰まり・配管工事のご相談は、お電話またはLINEからお気軽にご連絡ください。<br>
+          LINEなら写真を送るだけで簡単にご相談いただけます。
+        </p>
         <div class="contact-actions" style="position:relative; z-index:1;">
-          <a class="glass-btn btn-primary" href="tel:08038688596"><span>今すぐ電話する</span></a>
+          <a class="glass-btn btn-primary" href="tel:08038688596"><span>📞 今すぐ電話する</span></a>
           <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで相談する</span></a>
         </div>
       </div>
