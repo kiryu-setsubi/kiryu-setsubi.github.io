@@ -47,7 +47,6 @@
       min-height: 100vh;
       overflow: hidden;
       color: #fff;
-      background: none;
       isolation: isolate;
     }
 
@@ -61,11 +60,6 @@
       transform: scale(1.08);
       animation: heroFadeZoom 42s infinite ease-in-out;
       will-change: transform, opacity;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: none;
     }
 
     @keyframes heroFadeZoom {
@@ -469,37 +463,27 @@
       .hero-inner {
         padding: 22px 24px calc(170px + env(safe-area-inset-bottom));
       }
-
       .logo-float img { width: 185px; }
-
       h1 { font-size: 60px; }
-
       .lead { font-size: 17px; }
-
       .hero-buttons {
         grid-template-columns: 220px 220px;
         width: fit-content;
         max-width: none;
       }
-
       .contact-actions {
         grid-template-columns: 220px 220px;
         width: fit-content;
         max-width: none;
       }
-
       .section { padding: 60px 24px; }
-
       .cards,
       .location-grid { grid-template-columns: 1fr 1fr; }
-
       .works-grid { grid-template-columns: 1fr 1fr 1fr; }
-
       .company-grid {
         grid-template-columns: 1.05fr .95fr;
         align-items: start;
       }
-
       .floating-cta {
         left: auto;
         right: 24px;
@@ -642,6 +626,7 @@
           <div class="section-mini">Kishiwada</div>
           <h2>岸和田本拠点</h2>
           <p><strong>所在地</strong><br>〒596-0072 大阪府岸和田市堺町7-9-303</p>
+          <p><a class="glass-btn btn-primary" href="kishiwada.html"><span>岸和田市ページを見る</span></a></p>
         </div>
         <div class="location-card">
           <div class="section-mini">Kaizuka</div>
@@ -697,9 +682,6 @@
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
             title="希竜設備 岸和田本拠点"></iframe>
-          <p style="margin-top:12px;">
-            <a class="glass-btn btn-primary" href="https://maps.app.goo.gl/n8WvwkqaZwuxyGdr5?g_st=il" target="_blank" rel="noopener noreferrer"><span>Googleマップで開く</span></a>
-          </p>
         </div>
 
         <div class="instagram-card" style="margin-top:18px;">
