@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://kiryu-setsubi.com/</loc>
   </url>
+
   <url>
     <loc>https://kiryu-setsubi.com/kishiwada.html</loc>
   </url>
+
   <url>
     <loc>https://kiryu-setsubi.com/kaizuka.html</loc>
   </url>
+
+  <url>
+    <loc>https://kiryu-setsubi.com/izumi.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kiryu-setsubi.com/izumiotsu.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kiryu-setsubi.com/izumisano.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kiryu-setsubi.com/sennan.html</loc>
+  </url>
+
 </urlset>
