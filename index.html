@@ -1,94 +1,838 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>岸和田市・貝塚市で水道でお困りなら希竜設備｜水漏れ修理・排水詰まり・配管工事</title>
+  <meta name="description" content="岸和田市・貝塚市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。岸和田市、貝塚市、和泉市、泉大津市、泉佐野市、泉南市など泉州エリア対応。" />
+  <meta name="keywords" content="岸和田市,貝塚市,水漏れ修理,排水詰まり,高圧洗浄,配管工事,水道業者,和泉市,泉大津市,泉佐野市,泉南市,泉州" />
+  <meta name="format-detection" content="telephone=yes" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="岸和田市・貝塚市で水道でお困りなら希竜設備" />
+  <meta property="og:description" content="水漏れ修理・排水詰まり・配管工事など、水回りのお困りごとに丁寧に対応します。" />
+  <meta property="og:image" content="images/logo.PNG" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0d1c31" />
 
-<title>岸和田市・貝塚市の水漏れ修理なら希竜設備｜即日対応</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      padding-bottom: calc(130px + env(safe-area-inset-bottom));
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      color: #172334;
+      line-height: 1.75;
+      background:
+        radial-gradient(circle at top, rgba(199,169,107,.08), transparent 32%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-<meta name="description" content="岸和田市・貝塚市で水漏れ修理なら希竜設備。トイレ・蛇口・給水管の水漏れ、排水詰まり、給湯器まで即日対応。泉州全域対応。" />
+    :root{
+      --navy:#0d1c31;
+      --blue:#123e73;
+      --gold:#c7a96b;
+      --muted:#617189;
+      --line:rgba(21,43,76,.08);
+      --shadow:0 20px 60px rgba(7,20,42,.12);
+    }
 
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transform: scale(1.08);
+      animation: heroFadeZoom 42s infinite ease-in-out;
+      will-change: transform, opacity;
+    }
+
+    @keyframes heroFadeZoom {
+      0% { opacity: 0; transform: scale(1.10) translate3d(0,0,0); }
+      6% { opacity: 1; }
+      20% { opacity: 1; transform: scale(1.02) translate3d(0,-6px,0); }
+      26% { opacity: 0; }
+      100% { opacity: 0; transform: scale(1.10) translate3d(0,0,0); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      height: 100%;
+      margin: 0 auto;
+      padding:
+        max(18px, env(safe-area-inset-top))
+        18px
+        calc(170px + env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+      pointer-events: none;
+    }
+
+    .logo-float {
+      padding: 0;
+      pointer-events: auto;
+    }
+
+    .logo-float img {
+      width: 165px;
+      border-radius: 30px;
+      background: transparent;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+      animation: floatLogo 4.4s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero-copy {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+      padding-bottom: 8px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.26);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size: 11px;
+      letter-spacing: .22em;
+      color: rgba(255,255,255,.96);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 18px;
+      height: 1px;
+      background: rgba(255,255,255,.72);
+      display: block;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      line-height: 1.18;
+      letter-spacing: .04em;
+      text-shadow: 0 6px 20px rgba(0,0,0,.18);
+    }
+
+    .lead {
+      margin: 0 auto;
+      max-width: 780px;
+      font-size: 15px;
+      color: rgba(255,255,255,.97);
+      text-shadow: 0 4px 14px rgba(0,0,0,.16);
+    }
+
+    .hero-buttons,
+    .contact-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 28px auto 20px;
+      max-width: 430px;
+    }
+
+    .glass-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 14px 18px;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+      backdrop-filter: blur(16px) saturate(1.08);
+      -webkit-backdrop-filter: blur(16px) saturate(1.08);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 14px 34px rgba(0,0,0,.12),
+        inset 0 1px 0 rgba(255,255,255,.18);
+    }
+
+    .glass-btn:hover { transform: translateY(-2px); }
+
+    .glass-btn::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 19px;
+      background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .glass-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(240,245,251,.80) 100%);
+      color: var(--blue);
+    }
+
+    .btn-line {
+      background: linear-gradient(180deg, rgba(31,221,106,.92) 0%, rgba(6,199,85,.76) 100%);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.08) 100%);
+      color: #fff;
+    }
+
+    .section { padding: 40px 16px; }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .section-mini {
+      color: var(--gold);
+      letter-spacing: .18em;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .section-header h2,
+    .panel h2,
+    .location-card h2,
+    .instagram-card h2,
+    .map-card h2,
+    .info-card h2 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      color: var(--navy);
+      letter-spacing: .04em;
+    }
+
+    .panel,
+    .location-card {
+      background: rgba(255,255,255,.96);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(21,43,76,.06);
+    }
+
+    p { margin: 0 0 12px; font-size: 15px; }
+    .list { margin: 0; padding-left: 18px; }
+    .list li { margin-bottom: 8px; font-size: 15px; }
+
+    .cards,
+    .location-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.99) 0%, rgba(248,251,255,.98) 100%);
+      border-radius: 24px;
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(21,43,76,.08);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent 75%);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .area-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #f7fbff 0%, #eef5fd 100%);
+      border: 1px solid #dce8f5;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid #dbe7f3;
+      box-shadow: 0 6px 16px rgba(17,40,76,.05);
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .work-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .work-card:hover img { transform: scale(1.04); }
+
+    .company-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-card,
+    .map-card,
+    .instagram-card {
+      background: rgba(255,255,255,.97);
+      border-radius: 26px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(20,40,70,.06);
+    }
+
+    .info-row {
+      padding: 12px 0;
+      border-bottom: 1px solid #e7edf5;
+      font-size: 15px;
+    }
+
+    .info-row:last-child { border-bottom: 0; }
+
+    .map-frame {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .insta-box {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .insta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(0,0,0,.12);
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 58%, #fcb045 100%);
+    }
+
+    .instagram-note {
+      font-size: 13px;
+      color: #71829b;
+    }
+
+    .contact-box {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(199,169,107,.22), transparent 28%),
+        linear-gradient(160deg, #11294b 0%, #09111d 100%);
+      color: #fff;
+      border-radius: 30px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 22px 60px rgba(10,31,67,.18);
+    }
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,.04), transparent 35%);
+      pointer-events: none;
+    }
+
+    .contact-title {
+      margin: 0 0 8px;
+      font-size: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-note {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,.86);
+      position: relative;
+      z-index: 1;
+    }
+
+    .review-btn {
+      display:block;
+      text-align:center;
+      padding:16px;
+      background:linear-gradient(180deg,#fbbc05 0%,#f4b400 100%);
+      color:#1a1a1a;
+      font-weight:800;
+      border-radius:16px;
+      margin-top:16px;
+      box-shadow:0 14px 30px rgba(0,0,0,.12);
+    }
+
+    .area-link-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .area-btn {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:16px;
+      border-radius:18px;
+      background:#fff;
+      font-weight:800;
+      color:var(--blue);
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      border:1px solid #e0e6ef;
+      transition:transform .2s ease, background .2s ease;
+    }
+
+    .area-btn:hover {
+      transform:translateY(-2px);
+      background:#f5f9ff;
+    }
+
+    .floating-cta-strong {
+      position:fixed;
+      left:10px;
+      right:10px;
+      bottom:calc(10px + env(safe-area-inset-bottom));
+      display:flex;
+      gap:10px;
+      z-index:9999;
+    }
+
+    .floating-cta-strong a {
+      flex:1;
+      text-align:center;
+      padding:16px;
+      font-weight:bold;
+      border-radius:14px;
+      font-size:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.2);
+      color:#fff;
+    }
+
+    .btn-call {
+      background:#ff3b30;
+    }
+
+    .btn-line-strong {
+      background:#06C755;
+    }
+
+    footer {
+      padding: 28px 16px calc(108px + env(safe-area-inset-bottom));
+      text-align: center;
+      color: #6a7890;
+      font-size: 13px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner {
+        padding: 22px 24px calc(170px + env(safe-area-inset-bottom));
+      }
+      .logo-float img { width: 185px; }
+      h1 { font-size: 60px; }
+      .lead { font-size: 17px; }
+      .hero-buttons {
+        grid-template-columns: 220px 220px;
+        width: fit-content;
+        max-width: none;
+      }
+      .contact-actions {
+        grid-template-columns: 220px 220px;
+        width: fit-content;
+        max-width: none;
+      }
+      .section { padding: 60px 24px; }
+      .cards,
+      .location-grid { grid-template-columns: 1fr 1fr; }
+      .works-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .company-grid {
+        grid-template-columns: 1.05fr .95fr;
+        align-items: start;
+      }
+      .area-link-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .floating-cta-strong {
+        left:auto;
+        right:24px;
+        bottom:24px;
+        width:360px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "希竜設備",
+    "image": "images/logo.PNG",
+    "telephone": "080-3868-8596",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "596-0072",
+      "addressRegion": "大阪府",
+      "addressLocality": "岸和田市",
+      "streetAddress": "堺町7-9-303",
+      "addressCountry": "JP"
+    },
+    "areaServed": [
+      "岸和田市",
+      "貝塚市",
+      "和泉市",
+      "泉大津市",
+      "泉佐野市",
+      "泉南市",
+      "泉州エリア"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr"
+    ],
+    "description": "岸和田市・貝塚市で水道でお困りなら希竜設備。水漏れ修理・排水詰まり・配管工事・高圧洗浄・給湯器やエコキュート交換に対応。"
+  }
+  </script>
 </head>
-
 <body>
+  <header class="hero" id="top">
+    <div class="slide" style="background-image:url('images/kyusui.jpg'); animation-delay: 0s;"></div>
+    <div class="slide" style="background-image:url('images/gesui.jpg'); animation-delay: 8.4s;"></div>
+    <div class="slide" style="background-image:url('images/2soushink.jpg'); animation-delay: 16.8s;"></div>
+    <div class="slide" style="background-image:url('images/2ren senmendai.jpg'); animation-delay: 25.2s;"></div>
+    <div class="slide" style="background-image:url('images/junior toilet.jpg'); animation-delay: 33.6s;"></div>
 
-<header>
-  <h1>希竜設備</h1>
-  <p>岸和田市・貝塚市の水道修理</p>
-</header>
+    <div class="hero-inner">
+      <div class="topbar">
+        <div class="logo-float">
+          <img src="images/logo.PNG" alt="希竜設備 ロゴ">
+        </div>
+      </div>
 
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <h2>地域密着の水道業者</h2>
-  <p>
-    岸和田市・貝塚市を中心に水道トラブルに対応。
-    水漏れ・詰まり・給湯器など幅広く対応しています。
-  </p>
-</section>
+      <div class="hero-copy">
+        <div class="eyebrow">KIRYU SETSUBI</div>
+        <h1>岸和田市・貝塚市の<br>水漏れ修理・排水詰まりなら<br>希竜設備！</h1>
+        <p class="lead">
+          岸和田市・貝塚市で水漏れ修理・排水詰まり・配管工事なら希竜設備。<br>
+          地域密着で、急な水回りトラブルにも丁寧かつ迅速に対応します。
+        </p>
 
-<!-- ★ここが追加したSEOブロック -->
-<section class="section">
-  <div class="wrap">
-    <div class="panel">
-      <h2>岸和田市・貝塚市の水漏れ修理なら即日対応</h2>
-
-      <p>
-        岸和田市・貝塚市で水漏れ修理なら希竜設備。
-        トイレ・キッチン・洗面・給水管など、
-        あらゆる水漏れトラブルに迅速対応します。
-      </p>
-
-      <ul>
-        <li>蛇口の水漏れ修理</li>
-        <li>トイレの水が止まらない</li>
-        <li>給水管・配管からの漏水</li>
-        <li>床や壁内部の水漏れ調査</li>
-      </ul>
+        <div class="hero-buttons">
+          <a class="glass-btn btn-primary" href="tel:08038688596"><span>📞 今すぐ電話で相談（最短対応）</span></a>
+          <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで無料相談（写真OK）</span></a>
+          <a class="glass-btn btn-secondary" href="#area-links"><span>対応エリアを見る</span></a>
+          <a class="glass-btn btn-secondary" href="#contact"><span>無料で見積もりする</span></a>
+        </div>
+      </div>
     </div>
+  </header>
+
+  <section class="section" style="padding-top:20px; padding-bottom:10px;">
+    <div class="wrap">
+      <div class="badge-row" style="justify-content:center;">
+        <a class="badge" href="#service">サービス</a>
+        <a class="badge" href="#area-links">対応エリア</a>
+        <a class="badge" href="#works">施工実績</a>
+        <a class="badge" href="#company">会社情報</a>
+        <a class="badge" href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="panel">
+        <div class="section-mini">About</div>
+        <h2>信頼感を伝える、丁寧な水道設備工事</h2>
+        <p>
+          希竜設備は、岸和田市・貝塚市を中心に水漏れ修理・排水詰まり・配管工事・水回りリフォームなど、
+          暮らしに欠かせない設備工事を一つひとつ丁寧に対応する水道設備会社です。
+        </p>
+        <ul class="list">
+          <li>水漏れ修理</li>
+          <li>排水詰まり対応</li>
+          <li>配管工事一式</li>
+          <li>トイレ・洗面・キッチン・浴室の水回り工事</li>
+          <li>給湯器・エコキュート・ポンプ交換</li>
+        </ul>
+
+        <div class="area-box">
+          <p><strong>対応エリア</strong><br>岸和田市、貝塚市、和泉市、泉大津市、泉佐野市、泉南市、その他泉州エリア一帯</p>
+          <div class="badge-row">
+            <span class="badge">水漏れ修理</span>
+            <span class="badge">排水詰まり</span>
+            <span class="badge">高圧洗浄</span>
+            <span class="badge">配管工事</span>
+            <span class="badge">水道業者</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="service">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-mini">Service</div>
+        <h2>対応サービス</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>水漏れ・詰まり修理</h3>
+          <p>岸和田市・貝塚市を中心に、水漏れ修理や排水詰まりなどのトラブルに迅速対応します。</p>
+        </div>
+        <div class="card">
+          <h3>配管工事</h3>
+          <p>新設・改修どちらも対応。安心して使える設備環境を整えます。</p>
+        </div>
+        <div class="card">
+          <h3>水回りリフォーム</h3>
+          <p>トイレ・洗面・キッチン・浴室の交換や改修もお任せください。</p>
+        </div>
+        <div class="card">
+          <h3>給湯器・エコキュート・機器交換</h3>
+          <p>使い勝手や機能性も考えた機器提案と施工を行います。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="area-links">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-mini">Area</div>
+        <h2>対応エリア別ページ</h2>
+      </div>
+      <div class="area-link-grid">
+        <a href="kishiwada.html" class="area-btn">岸和田市</a>
+        <a href="kaizuka.html" class="area-btn">貝塚市</a>
+        <a href="izumi.html" class="area-btn">和泉市</a>
+        <a href="izumiotsu.html" class="area-btn">泉大津市</a>
+        <a href="izumisano.html" class="area-btn">泉佐野市</a>
+        <a href="sennan.html" class="area-btn">泉南市</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="works">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="section-mini">Works</div>
+        <h2>施工実績</h2>
+      </div>
+      <div class="works-grid">
+        <div class="work-card"><img src="images/kyusui.jpg" alt="岸和田市 貝塚市 給水管工事 施工事例"></div>
+        <div class="work-card"><img src="images/gesui.jpg" alt="岸和田市 貝塚市 排水管工事 施工事例"></div>
+        <div class="work-card"><img src="images/2soushink.jpg" alt="岸和田市 貝塚市 ポンプ交換工事 施工事例"></div>
+        <div class="work-card"><img src="images/2ren senmendai.jpg" alt="岸和田市 貝塚市 洗面台交換工事 施工事例"></div>
+        <div class="work-card"><img src="images/junior hand.jpg" alt="岸和田市 貝塚市 手洗い器設置工事 施工事例"></div>
+        <div class="work-card"><img src="images/junior toilet.jpg" alt="岸和田市 貝塚市 トイレ交換工事 施工事例"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="company">
+    <div class="wrap company-grid">
+      <div class="info-card">
+        <div class="section-mini">Company</div>
+        <h2>会社情報</h2>
+        <div class="info-row"><strong>会社名：</strong>希竜設備</div>
+        <div class="info-row"><strong>代表：</strong>宮野竜平</div>
+        <div class="info-row"><strong>電話番号：</strong><a href="tel:08038688596">080-3868-8596</a></div>
+        <div class="info-row"><strong>岸和田本拠点：</strong>〒596-0072 大阪府岸和田市堺町7-9-303</div>
+        <div class="info-row"><strong>貝塚営業所：</strong>大阪府貝塚市水間539-2</div>
+        <div class="info-row"><strong>貝塚市倉庫：</strong>大阪府貝塚市小瀬22</div>
+        <div class="info-row"><strong>営業時間：</strong>8:00〜18:00</div>
+        <div class="info-row"><strong>定休日：</strong>日曜日</div>
+      </div>
+
+      <div>
+        <div class="map-card">
+          <div class="section-mini">Access</div>
+          <h2>岸和田本拠点アクセス</h2>
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps?q=34.4627139,135.3710997&z=17&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="希竜設備 岸和田本拠点"></iframe>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=34.4627139,135.3710997" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;background:#007BFF;color:#fff;border-radius:10px;font-weight:bold;min-width:140px;">🚗 ナビ開始</a>
+            <a href="https://www.google.com/maps?q=34.4627139,135.3710997" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;background:#1DBF73;color:#fff;border-radius:10px;font-weight:bold;min-width:140px;">📍 地図で開く</a>
+          </div>
+        </div>
+
+        <div class="map-card" style="margin-top:18px;">
+          <div class="section-mini">Kaizuka Office</div>
+          <h2>貝塚営業所アクセス</h2>
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps?q=34.3985252,135.3873847&z=17&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="希竜設備 貝塚営業所"></iframe>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=34.3985252,135.3873847" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;background:#007BFF;color:#fff;border-radius:10px;font-weight:bold;min-width:140px;">🚗 営業所へナビ</a>
+            <a href="https://www.google.com/maps?q=34.3985252,135.3873847" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;background:#1DBF73;color:#fff;border-radius:10px;font-weight:bold;min-width:140px;">📍 地図で開く</a>
+          </div>
+        </div>
+
+        <div class="map-card" style="margin-top:18px;">
+          <div class="section-mini">Kaizuka Warehouse</div>
+          <h2>貝塚倉庫アクセス</h2>
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps?q=34.4509160,135.3696168&z=17&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="希竜設備 貝塚倉庫"></iframe>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=34.4509160,135.3696168" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;background:#007BFF;color:#fff;border-radius:10px;font-weight:bold;min-width:140px;">🚗 倉庫へナビ</a>
+            <a href="https://www.google.com/maps?q=34.4509160,135.3696168" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;background:#1DBF73;color:#fff;border-radius:10px;font-weight:bold;min-width:140px;">📍 地図で開く</a>
+          </div>
+        </div>
+
+        <div class="instagram-card" style="margin-top:18px;">
+          <div class="section-mini">Instagram</div>
+          <h2>施工事例や日々の発信</h2>
+          <p>Instagramでも施工写真や日々の発信をご覧いただけます。</p>
+          <div class="insta-box">
+            <a class="insta-link" href="https://www.instagram.com/kiryusetsubi?igsh=dXd0bnVtMDJyZDQx&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+            <div class="instagram-note">※ Instagramはアプリまたはブラウザで開きます。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div class="section-mini" style="color: rgba(255,255,255,.78); position:relative; z-index:1;">Contact</div>
+        <h2 class="contact-title">お問い合わせ</h2>
+        <p class="contact-note">
+          岸和田市・貝塚市の水漏れ・詰まり・配管工事のご相談は、お電話またはLINEからお気軽にご連絡ください。<br>
+          LINEなら写真を送るだけで簡単にご相談いただけます。
+        </p>
+        <div class="contact-actions" style="position:relative; z-index:1;">
+          <a class="glass-btn btn-primary" href="tel:08038688596"><span>📞 今すぐ電話する</span></a>
+          <a class="glass-btn btn-line" href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer"><span>LINEで相談する</span></a>
+        </div>
+
+        <div style="position:relative; z-index:1;">
+          <a href="https://g.page/r/CRRZnpUhZZ05EBM/review" target="_blank" rel="noopener noreferrer" class="review-btn">
+            ⭐ Google口コミを書く（1分）
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="floating-cta-strong" aria-label="固定お問い合わせボタン">
+    <a href="tel:08038688596" class="btn-call">📞 今すぐ電話</a>
+    <a href="https://lin.ee/rc1EXRd" target="_blank" rel="noopener noreferrer" class="btn-line-strong">💬 LINEで相談</a>
   </div>
-</section>
 
-<!-- ===== SERVICE ===== -->
-<section id="service">
-  <h2>サービス内容</h2>
-
-  <ul>
-    <li>水漏れ修理</li>
-    <li>排水詰まり</li>
-    <li>給湯器修理・交換</li>
-  </ul>
-</section>
-
-<!-- ===== AREA ===== -->
-<section id="area">
-  <h2>対応エリア</h2>
-
-  <ul>
-    <li><a href="kishiwada.html">岸和田市</a></li>
-    <li><a href="kaizuka.html">貝塚市</a></li>
-    <li><a href="izumi.html">和泉市</a></li>
-    <li><a href="izumiotsu.html">泉大津市</a></li>
-    <li><a href="izumisano.html">泉佐野市</a></li>
-    <li><a href="sennan.html">泉南市</a></li>
-  </ul>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <h2>お問い合わせ</h2>
-
-  <p>
-    <a href="tel:08038688596">📞 電話する</a>
-  </p>
-
-  <p>
-    <a href="https://lin.ee/rc1EXRd">LINEで相談</a>
-  </p>
-</section>
-
-<footer>
-  <p>© 希竜設備</p>
-</footer>
-
+  <footer>
+    © 2026 希竜設備 / KIRYU SETSUBI All Rights Reserved.
+  </footer>
 </body>
 </html>
